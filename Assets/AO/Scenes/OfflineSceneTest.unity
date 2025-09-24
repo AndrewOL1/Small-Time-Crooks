@@ -1661,14 +1661,16 @@ MonoBehaviour:
     maxPlayers: 5
     roomProperties:
       keys:
-      - 
+      - Crooks
       values:
-      - 
+      - ' Small'
       stringKeys: []
       stringValues: []
   searchRoomArgs:
-    keys: []
-    values: []
+    keys:
+    - Crooks
+    values:
+    - Small
     stringKeys: []
     stringValues: []
   OnRoomJoined:
