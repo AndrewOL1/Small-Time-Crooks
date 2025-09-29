@@ -52,6 +52,13 @@ public class ThirdPersonCameraController : MonoBehaviour
             }
         }
 
+        float bumperDelta = controls.CameraControls.GamepadZoom.ReadValue<float>();
+        if (bumperDelta != 0)
+        {
+            targetZoom = Mathf.Clamp(orbital.Radius - bumperDelta * zoomSpeed, minDistance, maxDistance);
+        }
+
+
         curentZoom = Mathf.Lerp(curentZoom, targetZoom, Time.deltaTime * zoomLerpSpeed);
         orbital.Radius = curentZoom;
     }
