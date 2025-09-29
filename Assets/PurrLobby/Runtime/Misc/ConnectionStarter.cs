@@ -30,7 +30,7 @@ namespace PurrLobby
             }
             if (!TryGetComponent(out _udpTransport))
             {
-                PurrLogger.LogError($"Failed to get {nameof(UDPTransport)} component.",this);
+                PurrLogger.LogWarning($"Failed to get {nameof(UDPTransport)} component.",this);
             }
             if(!TryGetComponent(out _networkManager)) {
                 PurrLogger.LogError($"Failed to get {nameof(NetworkManager)} component.", this);

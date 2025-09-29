@@ -86,6 +86,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "OpenUI",
+                    "type": "Button",
+                    "id": "20513d69-ef56-46cb-b087-59e38428f555",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -473,6 +482,17 @@
                     "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b853c7d-6b10-4a50-827c-7cd4072b4f41",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -566,6 +586,15 @@
                     "type": "PassThrough",
                     "id": "9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseUI",
+                    "type": "Button",
+                    "id": "1b1937ce-373c-4e23-907b-b57df273ed68",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -987,6 +1016,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4985ab1c-5f89-44e8-95d4-6b90fa24dbfb",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
