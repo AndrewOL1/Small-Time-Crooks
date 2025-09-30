@@ -44,7 +44,8 @@ namespace AO.Scripts
             {
                 NetworkManager.main.StopClient();
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+            SceneManager.LoadScene(_lobbyDataHolder.isVRPlayer ? "OfflineSceneTestVR" : "OfflineSceneTest");
         }
         public void CloseGame()
         {
