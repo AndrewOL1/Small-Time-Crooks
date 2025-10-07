@@ -1,9 +1,10 @@
+using PurrNet;
 using System.Runtime.InteropServices;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkIdentity
 {
     [SerializeField] private Transform CameraTransform;
     [SerializeField] private float speed = 5f;
@@ -11,14 +12,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = -9.8f;
     [SerializeField] private CinemachineCamera camera;
     [SerializeField] private bool shouldFaceMoveDirection = false;
+    [SerializeField] Camera mainCam;
 
     private CharacterController controller;
     private Vector2 moveInput;
     private Vector3 velocity;
+    PlayerInput _playerInput;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -41,19 +47,35 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+    }
+
+    protected override void OnSpawned()
+    {
+        base.OnSpawned();
+        enabled = isOwner;
+        //controller.enabled = isOwner;
+        _playerInput = GetComponent<PlayerInput>();
+        _playerInput.enabled = isOwner;
+        mainCam.enabled = isOwner;
+        
+    }
+
+    private void FixedUpdate()
+    {
         Vector3 forward = CameraTransform.forward;
         Vector3 right = CameraTransform.right;
 
-        forward.y= 0;
+        forward.y = 0;
         right.y = 0;
 
         forward.Normalize();
         right.Normalize();
 
         Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
-        controller.Move(moveDirection * speed * Time.deltaTime);
+        controller.Move(moveDirection * speed*Time.deltaTime);
 
-        if (shouldFaceMoveDirection && moveDirection.sqrMagnitude >0.001f)
+        if (shouldFaceMoveDirection && moveDirection.sqrMagnitude > 0.001f)
         {
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);

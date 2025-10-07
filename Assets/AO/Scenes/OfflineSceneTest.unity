@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyManager: {fileID: 1069736094}
-  nextScene: GameTest
+  nextScene: KG Test
 --- !u!114 &1069736093
 MonoBehaviour:
   m_ObjectHideFlags: 0
