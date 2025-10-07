@@ -23,12 +23,14 @@ namespace AO.Scripts
         public void OpenUI()
         {
             _playerUI.enabled = true;
+            Cursor.lockState = CursorLockMode.Confined;
             playerInput.SwitchCurrentActionMap("UI");
             
         }
         public void CloseUI()
         {
             _playerUI.enabled = false;
+            Cursor.lockState = CursorLockMode.Locked;
             playerInput.SwitchCurrentActionMap("Player");
         }
 
