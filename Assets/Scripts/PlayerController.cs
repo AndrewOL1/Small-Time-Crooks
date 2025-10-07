@@ -73,7 +73,7 @@ public class PlayerController : NetworkIdentity
         right.Normalize();
 
         Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
-        controller.Move(moveDirection * speed * Time.deltaTime);
+        controller.Move(moveDirection * speed*Time.deltaTime);
 
         if (shouldFaceMoveDirection && moveDirection.sqrMagnitude > 0.001f)
         {
