@@ -3992,9 +3992,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4809966182063491201, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0005580897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809966182063491201, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
+      propertyPath: m_Center.y
+      value: -0.007978751
+      objectReference: {fileID: 0}
     - target: {fileID: 5852736053295442235, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
       propertyPath: m_Name
       value: PrisonDoorway
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169354930945874260, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00113
       objectReference: {fileID: 0}
     - target: {fileID: 6517492350443041665, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4035,6 +4047,14 @@ PrefabInstance:
     - target: {fileID: 6517492350443041665, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917859675785164389, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
+      propertyPath: m_Size.y
+      value: 0.00067655277
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917859675785164389, guid: 843d4d610dc43b1499fd0c230e4f5806, type: 3}
+      propertyPath: m_Center.y
+      value: 0.007932117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
