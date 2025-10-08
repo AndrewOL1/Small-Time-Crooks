@@ -66,6 +66,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd1c9126c1fd714d838dacfd2988f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   DoorOpen: {fileID: 1986951204286281235}
   DoorClose: {fileID: 3706633398357637142}
   openDuration: 5
@@ -129,6 +138,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b6b60f89554cbb448aef4746ffa744d7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b6b60f89554cbb448aef4746ffa744d7, type: 3}
       propertyPath: m_Name
       value: PrisonDoor open
@@ -167,6 +180,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd1c9126c1fd714d838dacfd2988f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   DoorOpen: {fileID: 0}
   DoorClose: {fileID: 0}
   openDuration: 0
@@ -352,6 +374,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40c2c62277994334eb0fd504037cd4b2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7917859675785164389}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40c2c62277994334eb0fd504037cd4b2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6779718788275841484}
   m_SourcePrefab: {fileID: 100100000, guid: 40c2c62277994334eb0fd504037cd4b2, type: 3}
 --- !u!1 &5852736053295442235 stripped
 GameObject:
@@ -422,6 +447,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0010000002, y: 0.0043970435, z: 0.021999996}
   m_Center: {x: 0, y: 0.0078014913, z: 0.0105}
+--- !u!114 &6779718788275841484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852736053295442235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817fe5016bd0a2a49a95b6eb338bb132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _syncParent: 1
+  _interpolateSettings: 7
+  _minBufferSize: 1
+  _maxBufferSize: 2
+  _characterControllerPatch: 0
+  _ownerAuth: 1
+  _interpolationTiming: 0
 --- !u!4 &6517492350443041665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 40c2c62277994334eb0fd504037cd4b2, type: 3}
