@@ -1,8 +1,9 @@
+using PurrNet;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
+public class DoorScript : NetworkIdentity
 {
     public GameObject DoorOpen;
     public GameObject DoorClose;
