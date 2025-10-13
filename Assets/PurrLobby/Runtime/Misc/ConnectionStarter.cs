@@ -106,7 +106,7 @@ namespace PurrLobby
             var lobbyOwner = SteamMatchmaking.GetLobbyOwner(new CSteamID(ulobbyId));
             if (!lobbyOwner.IsValid())
             {
-                Debug.LogError($"Failed to get looby owner from parsed lobby ID", this);
+                Debug.LogError($"Failed to get lobby owner from parsed lobby ID", this);
                 return;
             }
 
