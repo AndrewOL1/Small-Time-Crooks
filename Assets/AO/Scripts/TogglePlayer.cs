@@ -3,17 +3,23 @@ using PurrLobby;
 using UnityEngine;
 using PurrNet;
 using UnityEngine.EventSystems;
-
 namespace AO.Scripts
 {
-    public class EventManager : MonoBehaviour
+    public class TogglePlayer : MonoBehaviour
     {
         [SerializeField] private GameObject eventSystem, eventSystemVR;
         [SerializeField] private bool debug;
         private void Awake()
         {
+
+        }
+
+        private void Start()
+        {
+            NetworkIdentity identity = GetComponent<NetworkIdentity>();
             if (FindFirstObjectByType<PcVRDebugInit>()!=null)
             {
+                if (!identity.isOwner) return;
                 if(FindFirstObjectByType<PcVRDebugInit>().VrPlayer)
                     eventSystemVR.SetActive(true);
                 else
@@ -21,6 +27,7 @@ namespace AO.Scripts
             }
             else
             {
+                if (!identity.isOwner) return;
                 if (FindFirstObjectByType<LobbyDataHolder>().isVRPlayer)
                     eventSystemVR.SetActive(true);
                 else
@@ -29,5 +36,18 @@ namespace AO.Scripts
                 }
             }
         }
+
+        async void Startup()
+        {
+            try
+            {
+               // await
+            }
+            catch (Exception e)
+            {
+                throw; // TODO handle exception
+            }
+        }
     }
 }
+
