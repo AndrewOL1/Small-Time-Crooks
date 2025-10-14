@@ -58,7 +58,8 @@ public class PlayerController : NetworkIdentity
         _playerInput = GetComponent<PlayerInput>();
         _playerInput.enabled = isOwner;
         mainCam.enabled = isOwner;
-        
+        mainCam.transform.GetComponent<AudioListener>().enabled = isOwner;
+        camera.enabled = isOwner;
     }
 
     private void FixedUpdate()

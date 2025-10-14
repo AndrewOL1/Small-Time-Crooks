@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -12,8 +13,8 @@ namespace AO.Scripts
         PlayerInput _playerInput;
         [SerializeField]
         private string sceneToLoad,sceneToLoadVR;
-        [SerializeField] 
-        private bool _isVR=false;
+
+        public UnityEvent vrIsOn;
 
         [SerializeField] private float timer;
         private void Awake()
@@ -29,10 +30,8 @@ namespace AO.Scripts
         private void SetScene()
         {
             if (XRGeneralSettings.Instance.Manager.activeLoader != null) {
-               _isVR=true;
+               vrIsOn.Invoke();
             }
-  
-            SceneManager.LoadScene(_isVR ? sceneToLoadVR : sceneToLoad);
         }
     }
 }
