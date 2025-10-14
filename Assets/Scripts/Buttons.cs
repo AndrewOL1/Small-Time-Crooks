@@ -11,7 +11,8 @@ public class Buttons : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        RightCode = "";
+        inputAttemptNum = 0;
+        RightCode = "Kellan";
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class Buttons : MonoBehaviour
     public void ClearCode()
     {
         inputAttemptNum = 0;
-        RightCode = "";
+        RightCode = "Kellan";
     }
 
     public void OnCollisionEnter(Collision other)
