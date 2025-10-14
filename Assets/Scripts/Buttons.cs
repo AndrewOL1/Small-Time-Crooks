@@ -26,21 +26,21 @@ public class Buttons : MonoBehaviour
         RightCode = "";
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("button"))
         {
             if (inputAttemptNum == 0)
             {
-                codeFirst = other.GetComponent<CodeNum>().codeString;
+                codeFirst = other.gameObject.GetComponent<CodeNum>().codeString;
                 inputAttemptNum++;
             } else if (inputAttemptNum == 1)
             {
-                codeSecond = other.GetComponent<CodeNum>().codeString;
+                codeSecond = other.gameObject.GetComponent<CodeNum>().codeString;
                 inputAttemptNum++;
             } else if (inputAttemptNum == 2)
             {
-                codeLast = other.GetComponent<CodeNum>().codeString;
+                codeLast = other.gameObject.GetComponent<CodeNum>().codeString;
                 inputAttemptNum++;
                 CheckCode();
             }
