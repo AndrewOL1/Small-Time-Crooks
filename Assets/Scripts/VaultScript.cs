@@ -25,7 +25,7 @@ public class VaultScript : MonoBehaviour
 
     void Combination()
     {
-        if (leftKnob.transform.rotation.x / 6 == leftCode)
+        if (leftKnob.transform.eulerAngles.x / 6 == leftCode)
         {
             
             Debug.Log("Left unlocked");
