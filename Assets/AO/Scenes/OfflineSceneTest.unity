@@ -2000,9 +2000,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1069736091}
   - component: {fileID: 1069736094}
-  - component: {fileID: 1069736093}
   - component: {fileID: 1069736092}
   - component: {fileID: 1069736095}
+  - component: {fileID: 1069736096}
   m_Layer: 0
   m_Name: LobbyManager
   m_TagString: Untagged
@@ -2039,21 +2039,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobbyManager: {fileID: 1069736094}
   nextScene: KG Test
---- !u!114 &1069736093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069736090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15156e7f57bff964485891eba8344bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lobbyType: 2
-  maxLobbiesToFind: 10
-  handleSteamInit: 1
 --- !u!114 &1069736094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2066,7 +2051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018749c98c25d47418932e090d8f8fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentProvider: {fileID: 1069736093}
+  currentProvider: {fileID: 1069736096}
   createRoomArgs:
     maxPlayers: 5
     roomProperties:
@@ -2224,6 +2209,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d8d49cd9b6bd449bf26e7e957b0f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1069736096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069736090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15156e7f57bff964485891eba8344bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbyType: 2
+  maxLobbiesToFind: 10
+  handleSteamInit: 0
 --- !u!1 &1090895650
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using PurrNet;
 using UnityEngine.EventSystems;
 namespace AO.Scripts
 {
-    public class TogglePlayer : MonoBehaviour
+    public class TogglePlayer : NetworkBehaviour
     {
         [SerializeField] private GameObject eventSystem, eventSystemVR;
         [SerializeField] private bool debug;
@@ -14,7 +14,7 @@ namespace AO.Scripts
 
         }
 
-        private void Start()
+        public void Start()
         {
             NetworkIdentity identity = GetComponent<NetworkIdentity>();
             if (FindFirstObjectByType<PcVRDebugInit>()!=null)

@@ -9,6 +9,8 @@ namespace PurrNet
     {
         [SerializeField, HideInInspector] private NetworkIdentity playerPrefab;
         [SerializeField] private GameObject _playerPrefab;
+        [SerializeField] private GameObject _pcPlayerPrefab;
+        [SerializeField] private GameObject _vrPlayerPrefab;
         [Tooltip("Even if rules are to not despawn on disconnect, this will ignore that and always spawn a player.")]
         [SerializeField] private bool _ignoreNetworkRules;
 
