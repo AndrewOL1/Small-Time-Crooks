@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CodeNum : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CodeNum : MonoBehaviour
     void Start()
     {
         originalPOS = gameObject.transform;
+        StartCoroutine(pressButton());
         
     }
 
@@ -28,16 +30,16 @@ public class CodeNum : MonoBehaviour
     }
 
 
-   /* IEnumerator pressButton()
+    IEnumerator pressButton()
     {
         float startTime = Time.time;
         while (startTime < duration)
         {
             float fracComplete = (Time.time - startTime) / duration;
-            gameobject.transform.position = Vector3.Lerp(originalPOS, endPOS, fracComplete);
+            gameObject.transform.position = Vector3.Lerp(originalPOS.position, endPOS.position, fracComplete);
             yield return null;
         }
-    }*/
+    }
 
 
 }
