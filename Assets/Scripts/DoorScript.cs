@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DoorScript : NetworkIdentity
 {
-    public GameObject DoorOpen;
+    public Quaternion DoorOpen;
     public GameObject DoorClose;
     public float openDuration;
 
@@ -14,7 +14,7 @@ public class DoorScript : NetworkIdentity
     {
         openDuration *= 100;
         DoorClose.SetActive(true);
-        DoorOpen.SetActive(false);
+        //DoorOpen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class DoorScript : NetworkIdentity
         while (startTime < openDuration)
         {
             float fracComplete = (Time.time - startTime) / openDuration;
-            DoorClose.transform.rotation = Quaternion.Slerp(DoorClose.transform.rotation, DoorOpen.transform.rotation, fracComplete);
+            DoorClose.transform.rotation = Quaternion.Slerp(DoorClose.transform.rotation, DoorOpen, fracComplete);
             yield return null;
         }
     }
