@@ -2,6 +2,7 @@ using System;
 using PurrLobby;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace AO.Scripts
@@ -10,6 +11,8 @@ namespace AO.Scripts
     {
         LobbyDataHolder _lobbyData;
         TMP_Dropdown _dropdown;
+        [SerializeField]
+        FirstScene firstScene;
 
         private void Start()
         {
@@ -19,11 +22,16 @@ namespace AO.Scripts
 
         public void UpdatePlayerDevice(int deviceId)
         {
-            _lobbyData.isVRPlayer = deviceId==2;
+            _lobbyData.isVRPlayer = deviceId==1;
         }
         public void UpdatePlayerDevice()
         {
-            _lobbyData.isVRPlayer = _dropdown.value==2;
+            _lobbyData.isVRPlayer = _dropdown.value==1;
+        }
+
+        public void VrPlayerDevice()
+        {
+            _lobbyData.isVRPlayer = true;
         }
     }
 }

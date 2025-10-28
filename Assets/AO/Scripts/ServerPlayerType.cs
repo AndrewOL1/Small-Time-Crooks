@@ -6,11 +6,20 @@ namespace AO.Scripts
 {
     public class ServerPlayerType : NetworkBehaviour
     {
-        public Dictionary<int,bool> PlayerType = new Dictionary<int,bool>();
+        public Dictionary<TogglePlayer,bool> PlayerType = new Dictionary<TogglePlayer,bool>();
 
-        public void AddPlayerType(int playerID, bool playerType)
+        public void AddPlayerType(TogglePlayer player, bool playerType)
         {
-            PlayerType.Add(playerID, playerType);
+            PlayerType.Add(player, playerType);
+            EnablePlayersOnJoin();
+        }
+
+        public void EnablePlayersOnJoin()
+        {
+            foreach (TogglePlayer player in PlayerType.Keys)
+            {
+                player.Join(PlayerType[player]);
+            }
         }
     }
 }

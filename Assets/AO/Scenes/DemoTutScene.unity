@@ -830,7 +830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114383848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,8 +873,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 0}
   _playerPrefab: {fileID: 4877044710948226922, guid: f6141d731ef52114d9b99f54a689a7dd, type: 3}
-  _pcPlayerPrefab: {fileID: 0}
-  _vrPlayerPrefab: {fileID: 0}
   _ignoreNetworkRules: 0
   spawnPoints:
   - {fileID: 504836234}
@@ -3851,7 +3849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &632554319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10438,7 +10436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1900219572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10451,6 +10449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc64ff707d914a64e95f2ac0bf554c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _automaticCloudSetups:
+    _adaptToEdgegap: 1
   _serverPort: 5000
   _maxConnections: 100
   _address: 127.0.0.1
@@ -10482,8 +10482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 0}
   _playerPrefab: {fileID: 4877044710948226922, guid: f6141d731ef52114d9b99f54a689a7dd, type: 3}
-  _pcPlayerPrefab: {fileID: 0}
-  _vrPlayerPrefab: {fileID: 0}
   _ignoreNetworkRules: 0
   spawnPoints:
   - {fileID: 1479015911}

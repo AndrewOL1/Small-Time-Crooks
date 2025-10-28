@@ -11,6 +11,7 @@ namespace AO.Scripts
     {
         [SerializeField] private GameObject pcPlayer, vrPlayer;
         [SerializeField] private bool debug;
+        private ServerPlayerType _playerType;
         private void Awake()
         {
 
@@ -19,6 +20,12 @@ namespace AO.Scripts
         public void Start()
         {
             NetworkIdentity identity = GetComponent<NetworkIdentity>();
+            if (FindFirstObjectByType<ServerPlayerType>() != null)
+            {
+                _playerType= FindFirstObjectByType<ServerPlayerType>();
+                _playerType.AddPlayerType(this, FindFirstObjectByType<LobbyDataHolder>().isVRPlayer);
+            }
+
             if (FindFirstObjectByType<PcVRDebugInit>()!=null)
             {
                 if (!identity.isOwner) return;
@@ -30,6 +37,7 @@ namespace AO.Scripts
                 else
                     pcPlayer.SetActive(true);
             }
+            /*
             else
             {
                 if (!identity.isOwner) return;
@@ -39,6 +47,20 @@ namespace AO.Scripts
                 {
                     pcPlayer.SetActive(true);
                 }
+            }
+            */
+        }
+
+        public void Join(bool vr)
+        {
+            if (vr)
+            {
+                vrPlayer.SetActive(true);
+                Startup();
+            }
+            else
+            {
+                pcPlayer.SetActive(true);
             }
         }
 

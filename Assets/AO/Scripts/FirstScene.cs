@@ -15,6 +15,7 @@ namespace AO.Scripts
         private string sceneToLoad,sceneToLoadVR;
 
         public UnityEvent vrIsOn;
+        public bool vr=false;
 
         [SerializeField] private float timer;
         private void Awake()
@@ -31,6 +32,7 @@ namespace AO.Scripts
         {
             if (XRGeneralSettings.Instance.Manager.activeLoader != null) {
                vrIsOn.Invoke();
+               vr = true;
             }
         }
     }
