@@ -12,6 +12,7 @@ namespace AO.Scripts
         {
             PlayerType.Add(player, playerType);
             EnablePlayersOnJoin();
+            Debug.Log("added: "+player+" Vr: "+playerType);
         }
 
         public void EnablePlayersOnJoin()

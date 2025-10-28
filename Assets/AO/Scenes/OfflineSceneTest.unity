@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyManager: {fileID: 1069736094}
-  nextScene: KG Test
+  nextScene: DemoTutScene
 --- !u!114 &1069736093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4188,9 +4188,6 @@ MonoBehaviour:
     - m_Text: KeyBoard
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Controller
-      m_Image: {fileID: 0}
-      m_Color: {r: 0.08627451, g: 0.14509805, b: 0.20392159, a: 1}
     - m_Text: VR
       m_Image: {fileID: 0}
       m_Color: {r: 0.4039216, g: 0.5686275, b: 0.6156863, a: 1}
@@ -4230,6 +4227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e770b41931081844a8bcdfa145f67232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstScene: {fileID: 0}
 --- !u!1 &1659057332
 GameObject:
   m_ObjectHideFlags: 0
