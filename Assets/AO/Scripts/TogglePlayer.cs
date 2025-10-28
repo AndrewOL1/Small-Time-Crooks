@@ -86,7 +86,6 @@ namespace AO.Scripts
             if (vr)
             {
                 vrPlayer.SetActive(true);
-                Startup();
             }
             else
             {
