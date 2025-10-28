@@ -4378,11 +4378,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftKnob: {fileID: 876175955}
-  midKnob: {fileID: 0}
-  rightKnob: {fileID: 0}
+  midKnob: {fileID: 712815495}
+  rightKnob: {fileID: 702375944}
   leftCode: 54
-  rightCode: 0
-  midCode: 0
+  rightCode: 54
+  midCode: 54
+  leftCodeBool: 0
+  rightCodeBool: 0
+  midCodeBool: 0
+  leftNum: 0
 --- !u!65 &964223507
 BoxCollider:
   m_ObjectHideFlags: 0

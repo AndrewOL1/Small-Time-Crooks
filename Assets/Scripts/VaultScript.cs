@@ -9,26 +9,50 @@ public class VaultScript : MonoBehaviour
     public float rightCode;
     public float midCode;
 
+    public bool leftCodeBool;
+    public bool rightCodeBool;
+    public bool midCodeBool;
+
+
+    public float leftNum;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        leftCodeBool = false;
+        rightCodeBool = false;
+        midCodeBool = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        leftNum = leftKnob.transform.localEulerAngles.x;
         Combination();
     }
 
     void Combination()
     {
-        if (leftKnob.transform.eulerAngles.x / 6 == leftCode)
+        if ((int)leftKnob.transform.localEulerAngles.x / 6 == leftCode)
         {
+            leftCodeBool = true;
             
-            Debug.Log("Left unlocked");
+        }
+
+        if ((int)midKnob.transform.localEulerAngles.x / 6 == midCode)
+        {
+            midCodeBool = true;
+        }
+
+        if ((int)rightKnob.transform.localEulerAngles.x / 6 == rightCode)
+        {
+            rightCodeBool = true;
+        }
+
+        if (midCodeBool &&  leftCodeBool && rightCodeBool)
+        {
+            Debug.Log("Opening Vault");
         }
     }
 }
