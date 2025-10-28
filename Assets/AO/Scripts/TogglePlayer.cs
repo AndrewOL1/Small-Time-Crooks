@@ -22,7 +22,8 @@ namespace AO.Scripts
             NetworkIdentity identity = GetComponent<NetworkIdentity>();
             if (FindFirstObjectByType<ServerPlayerType>() != null)
             {
-                _playerType= FindFirstObjectByType<ServerPlayerType>();
+                //if (!identity.isOwner) return;
+                _playerType = FindFirstObjectByType<ServerPlayerType>();
                 _playerType.AddPlayerType(this, FindFirstObjectByType<LobbyDataHolder>().isVRPlayer);
             }
 

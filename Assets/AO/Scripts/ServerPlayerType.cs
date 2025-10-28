@@ -6,20 +6,35 @@ namespace AO.Scripts
 {
     public class ServerPlayerType : NetworkBehaviour
     {
-        public Dictionary<TogglePlayer,bool> PlayerType = new Dictionary<TogglePlayer,bool>();
+        public SyncDictionary<TogglePlayer,bool> myDictionary = new(true);
 
+        protected override void OnSpawned()
+        {
+            //Subscribing to changes made to the dictionary
+            myDictionary.onChanged += OnDictionaryChanged;
+        }
+        private void OnDictionaryChanged(SyncDictionaryChange<TogglePlayer, bool> change)
+        {
+            //This is called for everyone when the dictionary changes.
+            //It will log out the Key, Value and operation
+            Debug.Log($"Dictionary updated: {change}");
+        }
+        private void ChangeMyDictionary(TogglePlayer t,bool vr)
+        {
+            //This will change or add a value to the dictionary
+            myDictionary[t] = vr;
+        }
         public void AddPlayerType(TogglePlayer player, bool playerType)
         {
-            PlayerType.Add(player, playerType);
+            ChangeMyDictionary(player, playerType);
             EnablePlayersOnJoin();
             Debug.Log("added: "+player+" Vr: "+playerType);
         }
-
         public void EnablePlayersOnJoin()
         {
-            foreach (TogglePlayer player in PlayerType.Keys)
+            foreach (TogglePlayer player in myDictionary.Keys)
             {
-                player.Join(PlayerType[player]);
+                player.Join(myDictionary[player]);
             }
         }
     }
