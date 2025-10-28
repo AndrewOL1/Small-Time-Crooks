@@ -48,14 +48,13 @@ namespace AO.Scripts
                     pcPlayer.SetActive(true);
                 }
             }
-            /*
+            
             if (FindFirstObjectByType<ServerPlayerType>() != null)
             {
-                //if (!identity.isOwner) return;
                 _playerType = FindFirstObjectByType<ServerPlayerType>();
-                _playerType.AddPlayerType(this, FindFirstObjectByType<LobbyDataHolder>().isVRPlayer);
+                _playerType.AddPlayerType(this, Vr.value);
             }
-            */
+            
 
             if (FindFirstObjectByType<PcVRDebugInit>()!=null)
             {
