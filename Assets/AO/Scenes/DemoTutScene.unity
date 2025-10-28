@@ -2840,6 +2840,15 @@ MonoBehaviour:
   _directChildren: []
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
+  myDictionary:
+    _ownerAuth: 0
+    _serializedDict:
+      keys: []
+      values: 
+      stringKeys: []
+      stringValues: []
+    _sendIntervalInSeconds: 0
+    _useForceSend: 0
 --- !u!1001 &467193065
 PrefabInstance:
   m_ObjectHideFlags: 0

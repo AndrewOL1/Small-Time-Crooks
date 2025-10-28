@@ -4,6 +4,7 @@ using UnityEngine;
 using PurrNet;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
+using UnityEngine.ProBuilder.Shapes;
 
 namespace AO.Scripts
 {
@@ -12,20 +13,34 @@ namespace AO.Scripts
         [SerializeField] private GameObject pcPlayer, vrPlayer;
         [SerializeField] private bool debug;
         private ServerPlayerType _playerType;
+        public SyncVar<bool> Vr = new(false);
         private void Awake()
         {
-
+    
         }
 
         public void Start()
         {
             NetworkIdentity identity = GetComponent<NetworkIdentity>();
+            if (identity.isOwner) {
+                if (FindFirstObjectByType<LobbyDataHolder>().isVRPlayer)
+                {
+                    vrPlayer.SetActive(true);
+                    Startup();
+                }
+                else
+                {
+                    pcPlayer.SetActive(true);
+                }
+            }
+            /*
             if (FindFirstObjectByType<ServerPlayerType>() != null)
             {
                 //if (!identity.isOwner) return;
                 _playerType = FindFirstObjectByType<ServerPlayerType>();
                 _playerType.AddPlayerType(this, FindFirstObjectByType<LobbyDataHolder>().isVRPlayer);
             }
+            */
 
             if (FindFirstObjectByType<PcVRDebugInit>()!=null)
             {
