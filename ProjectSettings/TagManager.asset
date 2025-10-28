@@ -6,12 +6,12 @@ TagManager:
   tags:
   - PrisonKey
   - button
-  - GrabObject
+  - clearButton
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - GrabObject
+  - 
   - Water
   - UI
   - 

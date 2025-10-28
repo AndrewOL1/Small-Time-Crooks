@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Buttons : MonoBehaviour
 {
@@ -8,9 +10,14 @@ public class Buttons : MonoBehaviour
     public string codeLast;
     public int inputAttemptNum;
 
+    [Header("DoorVars")]
+    public Quaternion DoorOpen;
+    public GameObject DoorClose;
+    public float openDuration;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        openDuration *= 100;
         inputAttemptNum = 0;
         RightCode = "Kellan";
     }
@@ -62,7 +69,7 @@ public class Buttons : MonoBehaviour
     {
         if (RightCode == (codeFirst + codeSecond + codeLast))
         {
-            gameObject.SetActive(false);
+            StartCoroutine(OpenDoor());
             
         }
         else
@@ -71,6 +78,19 @@ public class Buttons : MonoBehaviour
         }
         
     }
+
+    IEnumerator OpenDoor()
+    {
+        float startTime = Time.time;
+        while (startTime < openDuration)
+        {
+            float fracComplete = (Time.time - startTime) / openDuration;
+            DoorClose.transform.rotation = Quaternion.Slerp(DoorClose.transform.rotation, DoorOpen, fracComplete);
+            yield return null;
+        }
+    }
+
+    
 
 
 }
