@@ -156,7 +156,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   codeButton: {fileID: 1873691744}
-  lobbyManager: {fileID: 0}
+  lobbyManager: {fileID: 1389493950}
 --- !u!224 &2261200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3397,7 +3397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomIdInput: {fileID: 878108689}
-  lobbyManager: {fileID: 0}
+  lobbyManager: {fileID: 1389493950}
   onStartJoin:
     m_PersistentCalls:
       m_Calls:
@@ -4040,7 +4040,7 @@ MonoBehaviour:
   OnViewHide:
     m_PersistentCalls:
       m_Calls: []
-  lobbyManager: {fileID: 0}
+  lobbyManager: {fileID: 1389493950}
   lobbyList: {fileID: 0}
 --- !u!225 &447428926
 CanvasGroup:
@@ -7980,7 +7980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd422646f801404bb568665b636fa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lobbyManager: {fileID: 0}
+  lobbyManager: {fileID: 1389493950}
   friendEntry: {fileID: 7291862350295757791, guid: f0ebb22e03871db4da7af11f133cf0f0, type: 3}
   content: {fileID: 1018973586}
   filter: 1
@@ -9263,7 +9263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1389493950}
         m_TargetAssemblyTypeName: PurrLobby.LobbyManager, PurrNetLobbySetup
         m_MethodName: ToggleLocalReady
         m_Mode: 1
@@ -12601,7 +12601,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1389493950}
         m_TargetAssemblyTypeName: PurrLobby.LobbyManager, PurrNetLobbySetup
         m_MethodName: LeaveLobby
         m_Mode: 1
@@ -13799,7 +13799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1389493950}
         m_TargetAssemblyTypeName: PurrLobby.LobbyManager, PurrNetLobbySetup
         m_MethodName: CreateRoom
         m_Mode: 1

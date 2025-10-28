@@ -5,17 +5,68 @@ using UnityEngine;
 
 namespace PurrNet
 {
+    public struct SpawnPoint
+    {
+        public Vector3 position;
+        public Quaternion rotation;
+    }
+
+    public interface IProvideSpawnPoints
+    {
+        public SpawnPoint NextSpawnPoint(PlayerID player, SceneID scene);
+    }
+
+    public interface IProvidePrefabInstantiated
+    {
+        public void OnPrefabInstantiated(GameObject prefabInstance, PlayerID player, SceneID scene);
+    }
+
     public class PlayerSpawner : PurrMonoBehaviour
     {
         [SerializeField, HideInInspector] private NetworkIdentity playerPrefab;
         [SerializeField] private GameObject _playerPrefab;
-        [SerializeField] private GameObject _pcPlayerPrefab;
-        [SerializeField] private GameObject _vrPlayerPrefab;
         [Tooltip("Even if rules are to not despawn on disconnect, this will ignore that and always spawn a player.")]
         [SerializeField] private bool _ignoreNetworkRules;
 
         [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
         private int _currentSpawnPoint;
+
+        private IProvideSpawnPoints _spawnPointProvider;
+        private IProvidePrefabInstantiated _prefabInstantiatedProvider;
+
+        /// <summary>
+        /// Sets a provider that will be used to provide spawn points for players.
+        /// Spawn points lists will be ignored.
+        /// </summary>
+        public void SetRespawnPointProvider(IProvideSpawnPoints provider)
+        {
+            _spawnPointProvider = provider;
+        }
+
+        /// <summary>
+        /// Resets the spawn point provider.
+        /// Uses the spawn points list instead.
+        /// </summary>
+        public void ResetSpawnPointProvider()
+        {
+            _spawnPointProvider = null;
+        }
+
+        /// <summary>
+        /// Sets a provider that will be used to notify when a player prefab has been instantiated.
+        /// </summary>
+        public void SetPrefabInstantiatedProvider(IProvidePrefabInstantiated provider)
+        {
+            _prefabInstantiatedProvider = provider;
+        }
+
+        /// <summary>
+        /// Resets the prefab instantiated provider.
+        /// </summary>
+        public void ResetPrefabInstantiatedProvider()
+        {
+            _prefabInstantiatedProvider = null;
+        }
 
         private void Awake()
         {
@@ -108,7 +159,12 @@ namespace PurrNet
 
             CleanupSpawnPoints();
 
-            if (spawnPoints.Count > 0)
+            if (_spawnPointProvider != null)
+            {
+                var point = _spawnPointProvider.NextSpawnPoint(player, scene);
+                newPlayer = UnityProxy.Instantiate(_playerPrefab, point.position, point.rotation, unityScene);
+            }
+            else if (spawnPoints.Count > 0)
             {
                 var spawnPoint = spawnPoints[_currentSpawnPoint];
                 _currentSpawnPoint = (_currentSpawnPoint + 1) % spawnPoints.Count;
@@ -119,6 +175,8 @@ namespace PurrNet
                 _playerPrefab.transform.GetPositionAndRotation(out var position, out var rotation);
                 newPlayer = UnityProxy.Instantiate(_playerPrefab, position, rotation, unityScene);
             }
+
+            _prefabInstantiatedProvider?.OnPrefabInstantiated(newPlayer, player, scene);
 
             if (newPlayer.TryGetComponent(out NetworkIdentity identity))
                 identity.GiveOwnership(player);
