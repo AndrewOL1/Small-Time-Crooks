@@ -3,11 +3,13 @@ using PurrLobby;
 using UnityEngine;
 using PurrNet;
 using UnityEngine.EventSystems;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
+
 namespace AO.Scripts
 {
     public class TogglePlayer : NetworkBehaviour
     {
-        [SerializeField] private GameObject eventSystem, eventSystemVR;
+        [SerializeField] private GameObject pcPlayer, vrPlayer;
         [SerializeField] private bool debug;
         private void Awake()
         {
@@ -20,33 +22,31 @@ namespace AO.Scripts
             if (FindFirstObjectByType<PcVRDebugInit>()!=null)
             {
                 if (!identity.isOwner) return;
-                if(FindFirstObjectByType<PcVRDebugInit>().VrPlayer)
-                    eventSystemVR.SetActive(true);
+                if (FindFirstObjectByType<PcVRDebugInit>().VrPlayer)
+                {
+                    vrPlayer.SetActive(true);
+                    Startup();
+                }
                 else
-                    eventSystem.SetActive(true);
+                    pcPlayer.SetActive(true);
             }
             else
             {
                 if (!identity.isOwner) return;
                 if (FindFirstObjectByType<LobbyDataHolder>().isVRPlayer)
-                    eventSystemVR.SetActive(true);
+                    vrPlayer.SetActive(true);
                 else
                 {
-                    eventSystem.SetActive(true);
+                    pcPlayer.SetActive(true);
                 }
             }
         }
 
-        async void Startup()
+        private void Startup()
         {
-            try
-            {
-               // await
-            }
-            catch (Exception e)
-            {
-                throw; // TODO handle exception
-            }
+            vrPlayer.GetComponentInChildren<InputActionManager>().enabled = true;
+            vrPlayer.GetComponentInChildren<Camera>().enabled = true;
+            vrPlayer.GetComponentInChildren<AudioListener>().enabled = true;
         }
     }
 }

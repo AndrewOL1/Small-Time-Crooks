@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4131370613898639249}
   - component: {fileID: 4521496768740818302}
   - component: {fileID: 7206392728986580463}
-  - component: {fileID: 4712090769397781577}
+  - component: {fileID: 3144135851672974079}
   m_Layer: 0
   m_Name: Pointer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4712090769397781577
+--- !u!65 &3144135851672974079
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,11 +102,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4357704906784551836
 GameObject:
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 17055706643431614}
   m_Layer: 0
   m_Name: Player
-  m_TagString: PrisonKey
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,7 +667,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -723,6 +723,7 @@ MonoBehaviour:
   camera: {fileID: 1241785235927708989}
   shouldFaceMoveDirection: 1
   mainCam: {fileID: 547330595079033722}
+  bounceForce: 5
 --- !u!114 &6859890145971187059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,13 +912,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1
+  m_Height: 0.1
   m_Radius: 0.5000001
   m_SlopeLimit: 45
   m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &17055706643431614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +948,7 @@ MonoBehaviour:
   _minBufferSize: 1
   _maxBufferSize: 2
   _characterControllerPatch: 0
-  _ownerAuth: 1
+  _ownerAuth: 0
   _interpolationTiming: 0
 --- !u!1 &4756700633079237880
 GameObject:
@@ -960,7 +961,7 @@ GameObject:
   - component: {fileID: 6192139368165881871}
   m_Layer: 0
   m_Name: PC Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -975,8 +976,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3047909801318959146}
   - {fileID: 4972704111026840767}
@@ -1012,7 +1013,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.72, y: 1.181, z: -0.222}
-  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6192139368165881871}
@@ -1052,8 +1053,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dcf0d74c0daa946933f3deebc1fd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 4756700633079237880}
-  eventSystemVR: {fileID: 8030889436497325428}
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  pcPlayer: {fileID: 4756700633079237880}
+  vrPlayer: {fileID: 8030889436497325428}
   debug: 1
 --- !u!1001 &3240027429409227632
 PrefabInstance:
@@ -1063,6 +1073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3565328209961642378}
     m_Modifications:
+    - target: {fileID: 435620564365629314, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 722880651437656727, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: m_StepOffset
       value: 0.1
@@ -1117,6 +1131,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5510551738865372025, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662821543762252152, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662821543762252154, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697869584143504906, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+      propertyPath: _ownerAuth
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
