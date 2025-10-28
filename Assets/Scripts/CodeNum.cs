@@ -6,6 +6,7 @@ public class CodeNum : MonoBehaviour
     public string codeString;
     public Transform originalPOS;
     public Transform endPOS;
+    public Vector3 testPOS;
     public float duration;
 
     public bool buttonPressed; // a test bool
@@ -13,7 +14,7 @@ public class CodeNum : MonoBehaviour
     void Start()
     {
         buttonPressed = false;
-        originalPOS = gameObject.transform;
+        //originalPOS = gameObject.transform;
         //StartCoroutine(pressButton());
         
     }
@@ -24,7 +25,7 @@ public class CodeNum : MonoBehaviour
         posCorrecter();
         if (buttonPressed)
         {
-            StartCoroutine(pressButton());
+            //StartCoroutine(pressButton());
         }
     }
 
@@ -37,7 +38,7 @@ public class CodeNum : MonoBehaviour
     }
 
 
-    IEnumerator pressButton()
+    /*IEnumerator pressButton()
     {
         float startTime = Time.time;
         while (startTime < duration)
@@ -57,7 +58,7 @@ public class CodeNum : MonoBehaviour
             gameObject.transform.position = Vector3.Lerp(endPOS.position, originalPOS.position, fracComplete);
             yield return null;
         }
-    }
+    }*/
 
     public void posCorrecter()
     {
