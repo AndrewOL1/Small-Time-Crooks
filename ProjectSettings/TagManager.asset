@@ -7,11 +7,12 @@ TagManager:
   - PrisonKey
   - button
   - clearButton
+  - GrabObject
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - button
   - Water
   - UI
   - 

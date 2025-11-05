@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using PurrNet;
 
-public class CodeNum : MonoBehaviour
+public class CodeNum : NetworkBehaviour
 {
     public string codeString;
     public Transform originalPOS;
@@ -10,6 +11,8 @@ public class CodeNum : MonoBehaviour
     public float duration;
 
     public bool buttonPressed; // a test bool
+
+    private bool _cooldown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,13 +23,11 @@ public class CodeNum : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        posCorrecter();
-        if (buttonPressed)
-        {
-            //StartCoroutine(pressButton());
-        }
+        //posCorrecter();
+        transform.position = Vector3.Lerp(transform.position, buttonPressed ?
+            endPOS.position : originalPOS.position, Time.deltaTime * duration);
     }
 
     private void OnColliderEnter(Collision other)
@@ -37,6 +38,24 @@ public class CodeNum : MonoBehaviour
         }
     }
 
+    public void OnClicked()
+    {
+        if (_cooldown) return;
+        buttonPressed = !buttonPressed;
+        _cooldown = true;
+        StartCoroutine(Delay());
+    }
+
+    public void Clear()
+    {
+        buttonPressed = false;
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(duration);
+        _cooldown = false;
+    }
 
     /*IEnumerator pressButton()
     {

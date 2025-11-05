@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
+using PurrNet;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Events;
 
-public class Buttons : MonoBehaviour
+public class Buttons : NetworkBehaviour
 {
     public string RightCode;
     public string codeFirst;
@@ -14,6 +17,9 @@ public class Buttons : MonoBehaviour
     public Quaternion DoorOpen;
     public GameObject DoorClose;
     public float openDuration;
+
+    
+    public UnityEvent ClearCodeEvent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,8 +36,12 @@ public class Buttons : MonoBehaviour
 
     public void ClearCode()
     {
+        ClearCodeEvent.Invoke();
         inputAttemptNum = 0;
         RightCode = "Kellan";
+        codeFirst = "";
+        codeSecond = "";
+        codeLast = "";
     }
 
     public void OnCollisionEnter(Collision other)
@@ -62,6 +72,38 @@ public class Buttons : MonoBehaviour
         if (other.gameObject.CompareTag("clearButton"))
         {
             ClearCode();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("button"))
+        {
+            var codeFragment=other.gameObject.GetComponent<CodeNum>().codeString;
+            if (codeFragment == "ClearCode")
+            {
+                ClearCode();return;
+            }
+            switch (inputAttemptNum)
+            {
+                case 0:
+                    codeFirst = codeFragment;
+                    inputAttemptNum++;
+                    break;
+                case 1:
+                    codeSecond = codeFragment;
+                    inputAttemptNum++;
+                    break;
+                case 2:
+                    codeLast = codeFragment;
+                    inputAttemptNum++;
+                    CheckCode();
+                    break;
+                default:
+                    ClearCode();
+                    break;
+            }
+            
         }
     }
 
