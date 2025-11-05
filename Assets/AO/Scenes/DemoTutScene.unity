@@ -289,6 +289,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b2ee5b9dbbef4f95b6730787b0060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   codeString: An
   originalPOS: {fileID: 1878366346}
   endPOS: {fileID: 1841022465}
@@ -1283,7 +1292,7 @@ Transform:
   m_GameObject: {fileID: 129234236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62, y: 0, z: 0.071}
+  m_LocalPosition: {x: -5.28, y: 0, z: -10.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1984,6 +1993,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b2ee5b9dbbef4f95b6730787b0060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   codeString: Ke
   originalPOS: {fileID: 1149624431}
   endPOS: {fileID: 2097278990}
@@ -2076,7 +2094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 794688167}
   m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
@@ -2084,13 +2102,13 @@ MonoBehaviour:
   m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
+  m_AllowGazeInteraction: 1
+  m_AllowGazeSelect: 1
   m_OverrideGazeTimeToSelect: 0
   m_GazeTimeToSelect: 0.5
   m_OverrideTimeToAutoDeselectGaze: 0
   m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
+  m_AllowGazeAssistance: 1
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2141,7 +2159,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 208302591}
+        m_TargetAssemblyTypeName: CodeNum, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -4557,6 +4587,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b2ee5b9dbbef4f95b6730787b0060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   codeString: an
   originalPOS: {fileID: 93152714}
   endPOS: {fileID: 720705314}
@@ -5137,7 +5176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &763944505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5872,6 +5911,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b2ee5b9dbbef4f95b6730787b0060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   codeString: ClearCode
   originalPOS: {fileID: 1496688155}
   endPOS: {fileID: 1102553350}
@@ -6619,6 +6667,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b2ee5b9dbbef4f95b6730787b0060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   codeString: ew
   originalPOS: {fileID: 1331232885}
   endPOS: {fileID: 857354396}
@@ -7094,6 +7151,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b2ee5b9dbbef4f95b6730787b0060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   codeString: dr
   originalPOS: {fileID: 2144792123}
   endPOS: {fileID: 1290709602}
@@ -7715,9 +7781,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 117261327631279321, guid: cb7721578e5539944856e94256381c83, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 499216570838772716, guid: cb7721578e5539944856e94256381c83, type: 3}
       propertyPath: m_Name
       value: Short Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 499216570838772716, guid: cb7721578e5539944856e94256381c83, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 983546682264596822, guid: cb7721578e5539944856e94256381c83, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7762,6 +7836,10 @@ PrefabInstance:
     - target: {fileID: 8150242934717051183, guid: cb7721578e5539944856e94256381c83, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285084567456388781, guid: cb7721578e5539944856e94256381c83, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8096,12 +8174,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102586860}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da8ecd5f311266841a062a9875881947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VrPlayer: 0
+  VrPlayer: 1
 --- !u!4 &1102586862
 Transform:
   m_ObjectHideFlags: 0
@@ -8973,6 +9051,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4b2ee5b9dbbef4f95b6730787b0060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   codeString: ll
   originalPOS: {fileID: 1429168160}
   endPOS: {fileID: 928186503}
@@ -9316,6 +9403,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ce0a348d7c39a4993572e89796562c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   RightCode: 
   codeFirst: 
   codeSecond: 
@@ -12534,7 +12630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1846883089
 MonoBehaviour:
   m_ObjectHideFlags: 0
