@@ -1136,6 +1136,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5664679380135489254, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6662821543762252152, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1144,18 +1148,50 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6662821543811976542, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8697869584143504906, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: _ownerAuth
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1699369754729145580, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5449494596849010720, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6248545774084920169}
+    - targetCorrespondingSourceObject: {fileID: 8251374952831649952, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7458284455115053875}
   m_SourcePrefab: {fileID: 100100000, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+--- !u!1 &6806106763744742352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8251374952831649952, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
+  m_PrefabInstance: {fileID: 3240027429409227632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7458284455115053875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806106763744742352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!4 &6957932076633868297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5510551738865372025, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
