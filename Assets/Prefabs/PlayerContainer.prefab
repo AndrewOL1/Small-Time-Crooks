@@ -718,7 +718,7 @@ MonoBehaviour:
   _visitiblityRules: {fileID: 0}
   CameraTransform: {fileID: 4972704111026840767}
   speed: 2
-  jumpHeight: 1
+  jumpHeight: 0.75
   gravity: -9.8
   camera: {fileID: 1241785235927708989}
   shouldFaceMoveDirection: 1
