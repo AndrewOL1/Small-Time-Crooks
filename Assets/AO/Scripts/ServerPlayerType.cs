@@ -7,12 +7,17 @@ namespace AO.Scripts
     public class ServerPlayerType : NetworkBehaviour
     {
         public SyncDictionary<TogglePlayer,bool> myDictionary = new(true);
-
-        protected override void OnSpawned()
+        
+        [ServerRpc]
+        protected override void OnSpawned(bool asServer)
         {
+            if (asServer)
+                return;
             //Subscribing to changes made to the dictionary
             myDictionary.onChanged += OnDictionaryChanged;
         }
+        
+        [ObserversRpc]
         private void OnDictionaryChanged(SyncDictionaryChange<TogglePlayer, bool> change)
         {
             //This is called for everyone when the dictionary changes.
