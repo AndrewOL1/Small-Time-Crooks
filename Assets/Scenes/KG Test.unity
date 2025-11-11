@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 56939799}
   - component: {fileID: 56939798}
   - component: {fileID: 56939797}
+  - component: {fileID: 56939801}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -541,6 +542,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1876035107}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &56939801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56939796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db42f81607316e45a743aa8de466e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotMachine: {fileID: 0}
+  stopped: 0
+  wasSpun: 0
+  isSpun: 0
+  spinTime: 0
+  spinDuration: 5
+  code: 0
+  endDelay: 2
 --- !u!1 &67760178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 420918f320984084989c91a483d7879b, type: 3}
@@ -10810,6 +10831,7 @@ GameObject:
   - component: {fileID: 1435191572}
   - component: {fileID: 1435191571}
   - component: {fileID: 1435191570}
+  - component: {fileID: 1435191574}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -10908,6 +10930,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1876035107}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1435191574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435191569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db42f81607316e45a743aa8de466e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotMachine: {fileID: 0}
+  stopped: 0
+  wasSpun: 0
+  isSpun: 0
+  spinTime: 0
+  spinDuration: 5
+  code: 0
+  endDelay: 1
 --- !u!1001 &1462017516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14314,6 +14356,9 @@ MonoBehaviour:
   isSpun: 0
   spinTime: 0
   spinDuration: 5
+  spinCheckDelay: 0
+  correctCode: 0
+  currentCode: 0
 --- !u!1 &1904008354
 GameObject:
   m_ObjectHideFlags: 0
@@ -16148,6 +16193,7 @@ GameObject:
   - component: {fileID: 2089643982}
   - component: {fileID: 2089643981}
   - component: {fileID: 2089643980}
+  - component: {fileID: 2089643984}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -16246,6 +16292,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1876035107}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2089643984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089643979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db42f81607316e45a743aa8de466e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotMachine: {fileID: 0}
+  stopped: 0
+  wasSpun: 0
+  isSpun: 0
+  spinTime: 0
+  spinDuration: 5
+  code: 0
+  endDelay: 0
 --- !u!4 &2090753001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6576286416230892944, guid: a1f7ba201004d654abeb815fed5cf48b, type: 3}
