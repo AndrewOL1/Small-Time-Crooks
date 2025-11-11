@@ -6,7 +6,7 @@ namespace AO.Scripts
 {
     public class ServerPlayerType : NetworkBehaviour
     {
-        public SyncDictionary<TogglePlayer,bool> myDictionary = new(true);
+        public SyncDictionary<TogglePlayer,bool> myDictionary = new(false);
         
         [ServerRpc]
         protected override void OnSpawned(bool asServer)
