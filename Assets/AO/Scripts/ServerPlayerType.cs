@@ -20,7 +20,7 @@ namespace AO.Scripts
             //This is called for everyone when the dictionary changes.
             //It will log out the Key, Value and operation
             Debug.Log($"Dictionary updated: {change}");
-            //EnablePlayersOnJoin();
+            EnablePlayersOnJoin();
         }
         public void AddPlayerType(TogglePlayer player, bool playerTypeBool)
         {
