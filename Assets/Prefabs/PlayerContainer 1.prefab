@@ -6008,10 +6008,6 @@ MonoBehaviour:
   pcPlayer: {fileID: 4756700633079237880}
   vrPlayer: {fileID: 8030889436497325428}
   debug: 1
-  Vr:
-    _value: 0
-    _ownerAuth: 0
-    _sendIntervalInSeconds: 0
 --- !u!1001 &3240027429409227632
 PrefabInstance:
   m_ObjectHideFlags: 0

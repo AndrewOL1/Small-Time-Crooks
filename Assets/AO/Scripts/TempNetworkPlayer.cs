@@ -17,6 +17,7 @@ namespace AO.Scripts
         {
             base.OnSpawned();
             enabled = isOwner;
+            enabled = isOwner;
             _playerInput = GetComponent<PlayerInput>();
             _playerInput.enabled = isOwner;
         }

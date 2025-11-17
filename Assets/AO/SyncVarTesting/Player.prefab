@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6422928166099584438}
   - component: {fileID: 2843527011377151753}
   - component: {fileID: 83464108917176716}
+  - component: {fileID: 7964402537261582343}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8035067420611285841}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -267,7 +268,7 @@ MonoBehaviour:
     m_ActionId: 1b1937ce-373c-4e23-907b-b57df273ed68
     m_ActionName: 'UI/CloseUI[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -322,5 +323,28 @@ MonoBehaviour:
   _minBufferSize: 1
   _maxBufferSize: 2
   _characterControllerPatch: 0
-  _ownerAuth: 0
+  _ownerAuth: 1
   _interpolationTiming: 0
+--- !u!114 &7964402537261582343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035067420611285841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18a43d48e65a6346ba3a7a14e3f0a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  serverVar: {fileID: 0}
+  temp: 0

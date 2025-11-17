@@ -5,6 +5,7 @@ using PurrNet;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.Serialization;
 
 namespace AO.Scripts
 {
@@ -13,52 +14,30 @@ namespace AO.Scripts
         [SerializeField] private GameObject pcPlayer, vrPlayer;
         [SerializeField] private bool debug;
         private ServerPlayerType _playerType;
-        public SyncVar<bool> Vr = new(false);
         private void Awake()
         {
     
         }
-
-        protected override void OnSpawned(bool asServer)
+        protected override void OnSpawned()
         {
-            Vr.onChanged += OnVrChange;
-        }
-        private void OnVrChange(bool newValue)
-        {
-            Debug.Log("SyncVar has changed to: " + newValue);
-        }
-        private void ChangeVr(bool vr)
-        {
-            //This will change or add a value to the dictionary
-            Vr.value = vr;
-        }
-        public void Start()
-        {
-            NetworkIdentity identity = GetComponent<NetworkIdentity>();
-            if (identity.isOwner) {
+            if(!isOwner)return;
+            if (FindFirstObjectByType<LobbyDataHolder>() != null)
+            {
                 if (FindFirstObjectByType<LobbyDataHolder>().isVRPlayer)
                 {
-                    ChangeVr(true);
                     vrPlayer.SetActive(true);
                     Startup();
+                    CallPlayerType(true);
+    
                 }
                 else
                 {
-                    ChangeVr(false);
                     pcPlayer.SetActive(true);
+                    CallPlayerType(false);
                 }
             }
-            
-            if (FindFirstObjectByType<ServerPlayerType>() != null)
+            else if(FindFirstObjectByType<PcVRDebugInit>()!=null)//old code
             {
-                _playerType = FindFirstObjectByType<ServerPlayerType>();
-                _playerType.AddPlayerType(this, Vr.value);
-            }
-            
-
-            if (FindFirstObjectByType<PcVRDebugInit>()!=null)
-            {
-                if (!identity.isOwner) return;
                 if (FindFirstObjectByType<PcVRDebugInit>().VrPlayer)
                 {
                     vrPlayer.SetActive(true);
@@ -67,6 +46,9 @@ namespace AO.Scripts
                 else
                     pcPlayer.SetActive(true);
             }
+        }
+        public void Start()
+        {
             /*
             else
             {
@@ -80,7 +62,13 @@ namespace AO.Scripts
             }
             */
         }
-
+        [ServerRpc(requireOwnership: false)]
+        private void CallPlayerType(bool value)
+        {
+            if (FindFirstObjectByType<ServerPlayerType>() == null) return;
+            _playerType = FindFirstObjectByType<ServerPlayerType>();
+            _playerType.AddPlayerType(this, value);
+        }
         public void Join(bool vr)
         {
             if (vr)

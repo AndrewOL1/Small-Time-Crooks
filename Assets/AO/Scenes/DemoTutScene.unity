@@ -6536,7 +6536,7 @@ MonoBehaviour:
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
   myDictionary:
-    _ownerAuth: 0
+    _ownerAuth: 1
     _serializedDict:
       keys: []
       values: 

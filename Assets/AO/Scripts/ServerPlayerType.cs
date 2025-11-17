@@ -6,15 +6,12 @@ namespace AO.Scripts
 {
     public class ServerPlayerType : NetworkBehaviour
     {
-        public SyncDictionary<TogglePlayer,bool> myDictionary = new(false);
+        [SerializeField] private SyncDictionary<TogglePlayer,bool> playerType = new(true);
         
-        [ServerRpc]
-        protected override void OnSpawned(bool asServer)
+        protected override void OnSpawned()
         {
-            if (asServer)
-                return;
             //Subscribing to changes made to the dictionary
-            myDictionary.onChanged += OnDictionaryChanged;
+            playerType.onChanged += OnDictionaryChanged;
         }
         
         [ObserversRpc]
@@ -23,24 +20,17 @@ namespace AO.Scripts
             //This is called for everyone when the dictionary changes.
             //It will log out the Key, Value and operation
             Debug.Log($"Dictionary updated: {change}");
-            EnablePlayersOnJoin();
+            //EnablePlayersOnJoin();
         }
-        private void ChangeMyDictionary(TogglePlayer t,bool vr)
+        public void AddPlayerType(TogglePlayer player, bool playerTypeBool)
         {
-            //This will change or add a value to the dictionary
-            myDictionary[t] = vr;
+            playerType[player] = playerTypeBool;
         }
-        public void AddPlayerType(TogglePlayer player, bool playerType)
+        private void EnablePlayersOnJoin()
         {
-            ChangeMyDictionary(player, playerType);
-            EnablePlayersOnJoin();
-            Debug.Log("added: "+player+" Vr: "+playerType);
-        }
-        public void EnablePlayersOnJoin()
-        {
-            foreach (TogglePlayer player in myDictionary.Keys)
+            foreach (var player in playerType.Keys)
             {
-                player.Join(myDictionary[player]);
+                player.Join(playerType[player]);
             }
         }
     }
