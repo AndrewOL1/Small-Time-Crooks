@@ -1,21 +1,25 @@
+using PurrNet;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Interactor : MonoBehaviour
+public class Interactor : NetworkBehaviour
 {
     public float _castDistance = 5f;
     public Vector3 _raycastOffset = new Vector3(0, 1f, 0);
 
+    public bool hasItem;
+    public GameObject heldItem;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        hasItem = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (Keyboard.current.eKey.wasPressedThisFrame && hasItem == false)
         {
             
 
@@ -26,6 +30,10 @@ public class Interactor : MonoBehaviour
                     interactable.Interact(this);
                 }
             }
+        } else if (Keyboard.current.eKey.wasPressedThisFrame && hasItem == true)
+        {
+            DropItem();
+            
         }
     }
 
@@ -61,4 +69,9 @@ public class Interactor : MonoBehaviour
         }
     }*/
 
+    public void DropItem()
+    {
+        Instantiate(heldItem, transform.position, Quaternion.identity);
+        hasItem = false;
+    }
 }

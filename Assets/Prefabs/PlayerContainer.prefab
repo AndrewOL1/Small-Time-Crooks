@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 629523328814788281}
   m_Layer: 0
   m_Name: Player
-  m_TagString: PrisonKey
+  m_TagString: PC Holder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -964,6 +964,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _castDistance: 100
   _raycastOffset: {x: 0, y: 1, z: 0}
+  hasItem: 0
+  heldItem: {fileID: 0}
 --- !u!1 &4756700633079237880
 GameObject:
   m_ObjectHideFlags: 0

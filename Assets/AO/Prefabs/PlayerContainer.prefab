@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 8652047325725471825}
   eventSystemVR: {fileID: 8750088299577593800}
+  debug: 0
 --- !u!1 &1480189766273850579
 GameObject:
   m_ObjectHideFlags: 0
