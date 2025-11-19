@@ -8,6 +8,7 @@ TagManager:
   - button
   - clearButton
   - GrabObject
+  - PillarBottle1
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - VRHead
   - 
   - 
   - 
