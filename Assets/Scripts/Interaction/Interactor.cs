@@ -1,6 +1,7 @@
 using PurrNet;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Interactor : NetworkBehaviour
 {
@@ -9,6 +10,8 @@ public class Interactor : NetworkBehaviour
 
     public bool hasItem;
     public GameObject heldItem;
+    [SerializeField]
+    private NetworkAnimator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +31,7 @@ public class Interactor : NetworkBehaviour
                 if (interactable.CanInteract())
                 {
                     interactable.Interact(this);
+                    animator.SetBool("Interact", true);
                 }
             }
         } else if (Keyboard.current.eKey.wasPressedThisFrame && hasItem == true)
@@ -68,10 +72,13 @@ public class Interactor : NetworkBehaviour
             Debug.Log("Interacting");
         }
     }*/
-
+    [ServerRpc (requireOwnership: false)]
     public void DropItem()
     {
-        Instantiate(heldItem, transform.position, Quaternion.identity);
+        animator.SetBool("Interact", true);
+        //NetworkIdentity _spawnedObject = Instantiate(heldItem, transform.position, Quaternion.identity);
+        GameObject gameObject = Instantiate(heldItem, transform.position, Quaternion.identity);
+        gameObject.SetActive(true);
         hasItem = false;
     }
 }

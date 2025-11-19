@@ -13,11 +13,13 @@ public class PlayerController : NetworkIdentity
     [SerializeField] private CinemachineCamera camera;
     [SerializeField] private bool shouldFaceMoveDirection = false;
     [SerializeField] Camera mainCam;
+    [SerializeField] private NetworkAnimator networkAnimator;
 
     private CharacterController controller;
     private Vector2 moveInput;
     private Vector3 velocity;
     PlayerInput _playerInput;
+    private bool _jump;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,9 +40,10 @@ public class PlayerController : NetworkIdentity
         //Debug.Log($"Jumping {context.performed} - Is.Grounded: {controller.isGrounded}");
         if (context.performed && controller.isGrounded)
         {
+            _jump = true;
+            networkAnimator.SetBool("Jump",_jump);
             Debug.Log("We are supposed to jump");
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-
         }
     }
 
@@ -75,6 +78,7 @@ public class PlayerController : NetworkIdentity
 
         Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
         controller.Move(moveDirection * speed*Time.deltaTime);
+        networkAnimator.SetFloat("Speed", controller.velocity.magnitude);
 
         if (shouldFaceMoveDirection && moveDirection.sqrMagnitude > 0.001f)
         {
@@ -87,5 +91,9 @@ public class PlayerController : NetworkIdentity
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        if (!_jump) return;
+        if (!controller.isGrounded) return;
+        _jump = false;
+        networkAnimator.SetBool("Jump",_jump);
     }
 }
