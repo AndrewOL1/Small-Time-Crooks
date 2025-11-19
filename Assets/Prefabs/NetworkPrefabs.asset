@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66869b09091574e4c972f42f5ae2268e, type: 3}
   m_Name: NetworkPrefabs
   m_EditorClassIdentifier: 
-  autoGenerate: 1
+  autoGenerate: 0
   networkOnly: 1
   poolByDefault: 1
   folder: {fileID: 102900000, guid: 00000000000000001000000000000000, type: 3}
@@ -72,9 +72,9 @@ MonoBehaviour:
     warmupCount: 5
   - guid: 341b6068edbe8fc49a0f700711bf1a68
     prefab: {fileID: 3839849316486558602, guid: 341b6068edbe8fc49a0f700711bf1a68, type: 3}
-    pooled: 1
+    pooled: 0
     warmupCount: 5
   - guid: ef8df66f9a5d264449fdbe0b6f9adbdb
     prefab: {fileID: 4238172985595024882, guid: ef8df66f9a5d264449fdbe0b6f9adbdb, type: 3}
-    pooled: 1
+    pooled: 0
     warmupCount: 5
