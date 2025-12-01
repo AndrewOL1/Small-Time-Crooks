@@ -16,10 +16,15 @@ public class CodeNum : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        buttonPressed = false;
+        //buttonPressed = false;
         //originalPOS = gameObject.transform;
         //StartCoroutine(pressButton());
         
+    }
+
+    protected override void OnSpawned()
+    {
+        buttonPressed = false;
     }
 
     // Update is called once per frame

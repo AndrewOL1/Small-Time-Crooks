@@ -42,9 +42,13 @@ namespace AO.Scripts
                 {
                     vrPlayer.SetActive(true);
                     Startup();
+                    CallPlayerType(true);
                 }
                 else
+                {
                     pcPlayer.SetActive(true);
+                    CallPlayerType(false);
+                }
             }
         }
         public void Start()

@@ -1,6 +1,7 @@
+using PurrNet;
 using UnityEngine;
 
-public class SlotMachine : MonoBehaviour
+public class SlotMachine : NetworkBehaviour
 {
     public GameObject leftWheel;
     public GameObject midWheel;

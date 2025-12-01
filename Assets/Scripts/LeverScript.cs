@@ -1,6 +1,7 @@
+using PurrNet;
 using UnityEngine;
 
-public class LeverScript : MonoBehaviour
+public class LeverScript : NetworkBehaviour
 {
     public GameObject SlotMachineReal;
     HingeJoint hinge;
@@ -13,6 +14,12 @@ public class LeverScript : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
+    {
+        //canSpin = true;
+        //hinge = GetComponent<HingeJoint>();
+    }
+
+    protected override void OnSpawned()
     {
         canSpin = true;
         hinge = GetComponent<HingeJoint>();
