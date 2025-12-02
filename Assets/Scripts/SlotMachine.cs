@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class SlotMachine : NetworkBehaviour
 {
-    public GameObject leftWheel;
-    public GameObject midWheel;
-    public GameObject rightWheel;
+    public SlotRollers leftWheel;
+    public SlotRollers midWheel;
+    public SlotRollers rightWheel;
 
     private Quaternion leftRot;
     private Quaternion midRot;
@@ -25,6 +25,8 @@ public class SlotMachine : NetworkBehaviour
 
     public int correctCode;
     public int currentCode;
+
+    public float rollSpeed;
 
     public GameObject CasinoKey;
     public GameObject Coin;
@@ -54,18 +56,11 @@ public class SlotMachine : NetworkBehaviour
             isSpun = false;
         }
 
-        if (Time.time - spinTime >= spinDuration + spinCheckDelay)
-        {
-            CheckSlots();
-        }
+        if (TestingBool != true) return;
+        GameObject gameObject = Instantiate(CasinoKey, dropPoint.transform.position, Quaternion.identity);
+        gameObject.SetActive(true);
+        TestingBool = false;
 
-        if (TestingBool == true)
-        {
-            GameObject gameObject = Instantiate(CasinoKey, dropPoint.transform.position, Quaternion.identity);
-            gameObject.SetActive(true);
-            TestingBool = false;
-        }
-        
     }
 
     public void Spin()
@@ -76,15 +71,37 @@ public class SlotMachine : NetworkBehaviour
 
     public void CheckSlots()
     {
-        leftCode = (int)leftWheel.transform.localEulerAngles.x/36;
-        rightCode = (int)rightWheel.transform.localEulerAngles.x / 36;
-        midCode = (int)midWheel.transform.localEulerAngles.x / 36;
+        leftCode = leftWheel.code;
+        rightCode = rightWheel.code;
+        midCode = midWheel.code;
 
         currentCode = leftCode + midCode + rightCode;
-        if (currentCode != correctCode)
+        if (currentCode == correctCode)
         {
-            //GameObject gameObject = Instantiate(CasinoKey, transform.position, Quaternion.identity);
-            gameObject.SetActive(true);
+            for (int i = 0; i < 20; i++)
+            {
+                GameObject gameObjects = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
+                gameObjects.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+            }
+            GameObject gameObject = Instantiate(CasinoKey, transform.position, Quaternion.identity);
+            gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(2, 0, 0);
+            
+        }
+        else if (leftCode == rightCode && midCode == rightCode)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                GameObject gameObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
+                gameObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+            }
+        }
+        else if (leftCode == rightCode || leftCode == midCode || midCode == rightCode)
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                GameObject gameObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
+                gameObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+            }
         }
     }
 

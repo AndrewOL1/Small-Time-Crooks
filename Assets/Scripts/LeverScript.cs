@@ -11,6 +11,7 @@ public class LeverScript : NetworkBehaviour
     public GameObject Wheel1;
     public GameObject Wheel2;
     public GameObject Wheel3;
+    public bool pullLever;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,19 +29,21 @@ public class LeverScript : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hinge == null)
+            hinge = GetComponent<HingeJoint>();
         float betweenZeroAndOne = (hinge.angle - hinge.limits.min) / (hinge.limits.max - hinge.limits.min);
 
-        leverOutput = minValue +(maxValue - minValue) * betweenZeroAndOne;
+        leverOutput = minValue + (maxValue - minValue) * betweenZeroAndOne;
+        
 
+        if (pullLever && canSpin)
+        {
+            PullLever();
+        }
 
         if (transform.rotation.z < 0 && canSpin == true)
         {
-            canSpin = false;
-            SlotMachineReal.GetComponent<SlotMachine>().isSpun = true;
-            Wheel1.GetComponent<SlotRollers>().isSpun = true;
-            Wheel2.GetComponent<SlotRollers>().isSpun = true;
-            Wheel3.GetComponent<SlotRollers>().isSpun = true;
-            Debug.Log("Spin the wheels");
+            PullLever();
             //gameObject.transform.eulerAngles = new Vector3(0,0,1);
             
         }
@@ -48,5 +51,17 @@ public class LeverScript : NetworkBehaviour
         {
             canSpin = true;
         }
+    }
+    [ServerRpc]
+    private void PullLever()
+    {
+        if(pullLever)
+            pullLever = false;
+        canSpin = false;
+        SlotMachineReal.GetComponent<SlotMachine>().isSpun = true;
+        Wheel1.GetComponent<SlotRollers>().isSpun = true;
+        Wheel2.GetComponent<SlotRollers>().isSpun = true;
+        Wheel3.GetComponent<SlotRollers>().isSpun = true;
+        Debug.Log("Spin the wheels");
     }
 }
