@@ -26,6 +26,12 @@ public class SlotMachine : NetworkBehaviour
     public int correctCode;
     public int currentCode;
 
+    public GameObject CasinoKey;
+    public GameObject Coin;
+    public GameObject dropPoint;
+
+    public bool TestingBool;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,6 +58,13 @@ public class SlotMachine : NetworkBehaviour
         {
             CheckSlots();
         }
+
+        if (TestingBool == true)
+        {
+            GameObject gameObject = Instantiate(CasinoKey, dropPoint.transform.position, Quaternion.identity);
+            gameObject.SetActive(true);
+            TestingBool = false;
+        }
         
     }
 
@@ -66,6 +79,13 @@ public class SlotMachine : NetworkBehaviour
         leftCode = (int)leftWheel.transform.localEulerAngles.x/36;
         rightCode = (int)rightWheel.transform.localEulerAngles.x / 36;
         midCode = (int)midWheel.transform.localEulerAngles.x / 36;
+
+        currentCode = leftCode + midCode + rightCode;
+        if (currentCode != correctCode)
+        {
+            //GameObject gameObject = Instantiate(CasinoKey, transform.position, Quaternion.identity);
+            gameObject.SetActive(true);
+        }
     }
 
 

@@ -9,6 +9,7 @@ TagManager:
   - clearButton
   - GrabObject
   - PillarBottle1
+  - CasinoKey
   layers:
   - Default
   - TransparentFX

@@ -34,7 +34,7 @@ public class SlotRollers : MonoBehaviour, Iinteractable
     void Start()
     {
         stopped = false;
-        gameObject.transform.Rotate(0, Random.Range(0, 360), 0);
+        gameObject.transform.Rotate(0, 0, Random.Range(0, 360));
     }
 
     // Update is called once per frame

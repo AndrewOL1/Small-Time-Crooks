@@ -8,6 +8,7 @@ public class DoorScript : NetworkIdentity
     public Quaternion DoorOpen;
     public GameObject DoorClose;
     public float openDuration;
+    public string keyTag;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +26,7 @@ public class DoorScript : NetworkIdentity
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PrisonKey"))
+        if (other.gameObject.CompareTag(keyTag))
         {
             //gameObject.SetActive(false);
             //DoorClose.SetActive(false);
