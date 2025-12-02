@@ -15,6 +15,8 @@ public class VaultScript : MonoBehaviour
 
 
     public float leftNum;
+    public float midNum;
+    public float rightNum;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,24 +30,26 @@ public class VaultScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        leftNum = leftKnob.transform.localEulerAngles.x;
+        leftNum = (int)leftKnob.transform.localEulerAngles.x / 36;
+        midNum = (int)midKnob.transform.localEulerAngles.x / 36;
+        rightNum = (int)rightKnob.transform.localEulerAngles.x / 36;
         Combination();
     }
 
     void Combination()
     {
-        if ((int)leftKnob.transform.localEulerAngles.x / 6 == leftCode)
+        if ((int)leftKnob.transform.localEulerAngles.x / 36 == leftCode)
         {
             leftCodeBool = true;
             
         }
 
-        if ((int)midKnob.transform.localEulerAngles.x / 6 == midCode)
+        if ((int)midKnob.transform.localEulerAngles.x / 36 == midCode)
         {
             midCodeBool = true;
         }
 
-        if ((int)rightKnob.transform.localEulerAngles.x / 6 == rightCode)
+        if ((int)rightKnob.transform.localEulerAngles.x / 36 == rightCode)
         {
             rightCodeBool = true;
         }

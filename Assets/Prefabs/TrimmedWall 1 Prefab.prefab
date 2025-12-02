@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.875002
+      value: -2.112
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000001490116
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.125001
+      value: -8.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071062
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000086426724
+      value: -0.7071074
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d06162316b2daf24fabda8e5afeff823, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 975ac1d41f7960147b80508d86bb73f2, type: 2}
     - target: {fileID: 919132149155446097, guid: 268a4a1b177cdc340aece927ad71d1fb, type: 3}
       propertyPath: m_Name
       value: TrimmedWall 1 Prefab
@@ -92,5 +96,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.30696678, y: 2.5241177, z: 5.0360074}
-  m_Center: {x: 0.002615735, y: 0.7620591, z: 2.4986317}
+  m_Size: {x: 0.30696678, y: 2.9906836, z: 5.0360074}
+  m_Center: {x: 0.002615735, y: 0.995342, z: 2.4986317}
