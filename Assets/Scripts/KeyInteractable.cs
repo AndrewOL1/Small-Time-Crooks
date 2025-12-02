@@ -12,11 +12,12 @@ public class KeyInteractable : NetworkBehaviour, Iinteractable
     {
         return true;
     }
-
+    
     public bool Interact(Interactor interactor)
     {
         interactor.hasItem = true;
         interactor.heldItem = prefab;
+        Debug.Log( interactor.heldItem);
         Debug.Log("You have grabbed the key!");
         Destroy(gameObject);
 

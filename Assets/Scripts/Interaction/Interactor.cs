@@ -62,7 +62,7 @@ public class Interactor : NetworkBehaviour
         }
         Ray rays = new Ray(transform.position + _raycastOffset, transform.forward+transform.up);
 
-        Debug.DrawRay(rays.origin, rays.direction, Color.red, 3f);
+        Debug.DrawRay(rays.origin, rays.direction, Color.blue, 3f);
 
         if (Physics.Raycast(rays, out RaycastHit hitInfos, _castDistance))
         {
@@ -95,6 +95,7 @@ public class Interactor : NetworkBehaviour
         //NetworkIdentity _spawnedObject = Instantiate(heldItem, transform.position, Quaternion.identity);
         GameObject gameObject = Instantiate(heldItem, transform.position, Quaternion.identity);
         gameObject.SetActive(true);
+        heldItem = null;
         hasItem = false;
     }
 }
