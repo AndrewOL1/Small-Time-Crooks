@@ -169,6 +169,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 05bf173271affc647b8d9c700c48c86e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: acbc369874f8ffa44a1f0c3e539344fb, type: 2}
     - target: {fileID: 919132149155446097, guid: 05bf173271affc647b8d9c700c48c86e, type: 3}
       propertyPath: m_Name
       value: CandleTall
