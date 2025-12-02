@@ -2497,7 +2497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyManager: {fileID: 1069736094}
-  nextScene: BetaLevel
+  nextScene: Beta2
 --- !u!114 &1069736093
 MonoBehaviour:
   m_ObjectHideFlags: 0
