@@ -7101,6 +7101,8 @@ MonoBehaviour:
   rightCodeBool: 0
   midCodeBool: 0
   leftNum: 0
+  midNum: 0
+  rightNum: 0
 --- !u!65 &964223507
 BoxCollider:
   m_ObjectHideFlags: 0
