@@ -26,7 +26,6 @@ public class Buttons : NetworkBehaviour
         openDuration *= 100;
         inputAttemptNum = 0;
         RightCode = "Kellan";
-        StartCoroutine(OpenDoor());
     }
 
     // Update is called once per frame

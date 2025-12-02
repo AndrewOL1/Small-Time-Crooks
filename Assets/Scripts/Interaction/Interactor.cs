@@ -60,6 +60,22 @@ public class Interactor : NetworkBehaviour
 
             return false;
         }
+        Ray rays = new Ray(transform.position + _raycastOffset, transform.forward+transform.up);
+
+        Debug.DrawRay(rays.origin, rays.direction, Color.red, 3f);
+
+        if (Physics.Raycast(rays, out RaycastHit hitInfos, _castDistance))
+        {
+            interactable = hitInfos.collider.GetComponent<Iinteractable>();
+
+            if (interactable != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
 
         return false;
     }

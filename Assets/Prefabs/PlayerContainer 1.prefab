@@ -5666,6 +5666,7 @@ MonoBehaviour:
   camera: {fileID: 1241785235927708989}
   shouldFaceMoveDirection: 1
   mainCam: {fileID: 547330595079033722}
+  networkAnimator: {fileID: 0}
 --- !u!114 &6859890145971187059
 MonoBehaviour:
   m_ObjectHideFlags: 0
