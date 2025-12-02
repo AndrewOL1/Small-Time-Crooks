@@ -3669,6 +3669,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 40c2c62277994334eb0fd504037cd4b2, type: 3}
+--- !u!1 &360979597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 360979598}
+  m_Layer: 0
+  m_Name: CasinoDoorContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &360979598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360979597}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+  m_LocalPosition: {x: -9.261, y: 0, z: 1.026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1537261748}
+  - {fileID: 1338198428}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &369916270
 Mesh:
   m_ObjectHideFlags: 0
@@ -11788,6 +11821,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286587c02401aa746969e44600fb5c57, type: 3}
+--- !u!1 &1338198427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1338198428}
+  - component: {fileID: 1338198430}
+  - component: {fileID: 1338198429}
+  m_Layer: 0
+  m_Name: FinalLock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1338198428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338198427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.774, z: 0.451}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 360979598}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1338198429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338198427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd1c9126c1fd714d838dacfd2988f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  DoorOpen: {x: 0, y: 0, z: 0.70710677, w: -0.70710677}
+  DoorClose: {fileID: 1537261744}
+  openDuration: 5
+  keyTag: CasinoKey
+--- !u!65 &1338198430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338198427}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2104547, y: 0.13460445, z: 0.13903266}
+  m_Center: {x: 0.06900549, y: 0.029544353, z: 0.30562168}
 --- !u!1001 &1352539911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12763,11 +12875,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 360979598}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.261
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12775,23 +12887,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.026
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12815,38 +12927,40 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b736e510e43d8824391f99b30a047c02, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1537261745}
+      addedObject: {fileID: 1537261750}
   m_SourcePrefab: {fileID: 100100000, guid: b736e510e43d8824391f99b30a047c02, type: 3}
 --- !u!1 &1537261744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b736e510e43d8824391f99b30a047c02, type: 3}
   m_PrefabInstance: {fileID: 1537261743}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1537261745
-MonoBehaviour:
+--- !u!4 &1537261748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b736e510e43d8824391f99b30a047c02, type: 3}
+  m_PrefabInstance: {fileID: 1537261743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1537261750
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537261744}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd1c9126c1fd714d838dacfd2988f02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isSetup: 0
-  _prefabId: -2147483648
-  _componentIndex: -2147483648
-  _shouldBePooled: 0
-  _parent: {fileID: 0}
-  _invertedPathToNearestParent: 
-  _directChildren: []
-  _networkRules: {fileID: 0}
-  _visitiblityRules: {fileID: 0}
-  DoorOpen: {x: 0.70710677, y: 0, z: 0, w: -0.70710677}
-  DoorClose: {fileID: 1537261744}
-  openDuration: 5
-  keyTag: CasinoKey
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: b736e510e43d8824391f99b30a047c02, type: 3}
 --- !u!1001 &1541120541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19011,5 +19125,5 @@ SceneRoots:
   - {fileID: 2049447230}
   - {fileID: 765507031}
   - {fileID: 1681112380}
+  - {fileID: 360979598}
   - {fileID: 1207964852}
-  - {fileID: 1537261743}
