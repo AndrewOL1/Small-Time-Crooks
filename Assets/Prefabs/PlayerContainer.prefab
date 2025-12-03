@@ -9951,7 +9951,7 @@ MonoBehaviour:
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: 104.00881
+    Value: 104.00882
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -10577,7 +10577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6192139368165881871
 Transform:
   m_ObjectHideFlags: 0

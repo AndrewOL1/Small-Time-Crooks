@@ -6,6 +6,8 @@ public class SlotMachine : NetworkBehaviour
     public SlotRollers leftWheel;
     public SlotRollers midWheel;
     public SlotRollers rightWheel;
+    [SerializeField]
+    private LeverScript leverScript;
 
     private Quaternion leftRot;
     private Quaternion midRot;
@@ -103,6 +105,8 @@ public class SlotMachine : NetworkBehaviour
                 gameObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
             }
         }
+
+        leverScript.leverPulled = false;
     }
 
 

@@ -11,6 +11,7 @@ public class LeverScript : NetworkBehaviour
     public GameObject Wheel1;
     public GameObject Wheel2;
     public GameObject Wheel3;
+    public bool leverPulled;
     public bool pullLever;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,30 +32,30 @@ public class LeverScript : NetworkBehaviour
     {
         if (hinge == null)
             hinge = GetComponent<HingeJoint>();
-        float betweenZeroAndOne = (hinge.angle - hinge.limits.min) / (hinge.limits.max - hinge.limits.min);
-
-        leverOutput = minValue + (maxValue - minValue) * betweenZeroAndOne;
+        
         
 
-        if (pullLever && canSpin)
+        if (pullLever && canSpin)//for testing
         {
             PullLever();
         }
 
-        if (transform.rotation.z < 0 && canSpin == true)
+        if (transform.rotation.x > -90 && canSpin == true)
         {
             PullLever();
             //gameObject.transform.eulerAngles = new Vector3(0,0,1);
             
         }
-        else if (canSpin == false && transform.rotation.z >= 0)
+        else if (canSpin == false && leverPulled == true)
         {
+            transform.eulerAngles = new Vector3(-90, -90, -90);
             canSpin = true;
         }
     }
     [ServerRpc]
     private void PullLever()
     {
+        leverPulled = false;
         if(pullLever)
             pullLever = false;
         canSpin = false;
