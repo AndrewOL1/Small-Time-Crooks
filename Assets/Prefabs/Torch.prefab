@@ -287,6 +287,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: f31da2f0f8603e847a0b5736431705a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cbd3637f0a9af0f479d11cdacdaad78b, type: 2}
+    - target: {fileID: 7202271454713460447, guid: f31da2f0f8603e847a0b5736431705a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ab2f289e2aad0b41be2362a2338c155, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
