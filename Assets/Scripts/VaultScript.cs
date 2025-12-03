@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class VaultScript : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class VaultScript : MonoBehaviour
     public float midNum;
     public float rightNum;
 
+    public TMP_Text leftText;
+    public TMP_Text midText;
+    public TMP_Text rightText;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +38,9 @@ public class VaultScript : MonoBehaviour
         leftNum = (int)leftKnob.transform.localEulerAngles.x / 36;
         midNum = (int)midKnob.transform.localEulerAngles.x / 36;
         rightNum = (int)rightKnob.transform.localEulerAngles.x / 36;
+        rightText.text = ("" + rightNum);
+        leftText.text = ("" + leftNum);
+        midText.text = ("" + midNum);
         Combination();
     }
 
