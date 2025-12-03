@@ -360,7 +360,7 @@ MonoBehaviour:
   _directChildren: []
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
-  prefab: {fileID: 8765865270847996652, guid: d08c7ea943e470d46accb2cb7c08d5d8, type: 3}
+  prefab: {fileID: 1148846705194487443, guid: d08c7ea943e470d46accb2cb7c08d5d8, type: 3}
 --- !u!114 &59766809346049228
 MonoBehaviour:
   m_ObjectHideFlags: 0

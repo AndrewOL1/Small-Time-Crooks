@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class KeyInteractable : NetworkBehaviour, Iinteractable
 {
     [SerializeField]
-    private GameObject prefab;
+    private NetworkIdentity prefab;
 
 
     public bool CanInteract()
@@ -15,6 +15,7 @@ public class KeyInteractable : NetworkBehaviour, Iinteractable
     
     public bool Interact(Interactor interactor)
     {
+        SetVal(interactor);
         interactor.hasItem = true;
         interactor.heldItem = prefab;
         Debug.Log( interactor.heldItem);
@@ -22,6 +23,12 @@ public class KeyInteractable : NetworkBehaviour, Iinteractable
         Destroy(gameObject);
 
         return true;
+    }
+    [ServerRpc]
+    private void SetVal(Interactor interactor)
+    {
+        interactor.hasItem = true;
+        interactor.heldItem = prefab;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
