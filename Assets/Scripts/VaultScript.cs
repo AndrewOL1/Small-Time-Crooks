@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class VaultScript : MonoBehaviour
 {
@@ -15,6 +17,16 @@ public class VaultScript : MonoBehaviour
 
 
     public float leftNum;
+    public float midNum;
+    public float rightNum;
+
+    public TMP_Text leftText;
+    public TMP_Text midText;
+    public TMP_Text rightText;
+
+    public Quaternion DoorOpen;
+    public GameObject DoorClose;
+    public float openDuration;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,24 +40,29 @@ public class VaultScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        leftNum = leftKnob.transform.localEulerAngles.x;
+        leftNum = (int)leftKnob.transform.localEulerAngles.z / 36;
+        midNum = (int)midKnob.transform.localEulerAngles.z / 36;
+        rightNum = (int)rightKnob.transform.localEulerAngles.z / 36;
+        rightText.text = ("" + rightNum);
+        leftText.text = ("" + leftNum);
+        midText.text = ("" + midNum);
         Combination();
     }
 
     void Combination()
     {
-        if ((int)leftKnob.transform.localEulerAngles.x / 6 == leftCode)
+        if ((int)leftKnob.transform.localEulerAngles.z / 36 == leftCode)
         {
             leftCodeBool = true;
             
         }
 
-        if ((int)midKnob.transform.localEulerAngles.x / 6 == midCode)
+        if ((int)midKnob.transform.localEulerAngles.z / 36 == midCode)
         {
             midCodeBool = true;
         }
 
-        if ((int)rightKnob.transform.localEulerAngles.x / 6 == rightCode)
+        if ((int)rightKnob.transform.localEulerAngles.z / 36 == rightCode)
         {
             rightCodeBool = true;
         }
@@ -53,6 +70,18 @@ public class VaultScript : MonoBehaviour
         if (midCodeBool &&  leftCodeBool && rightCodeBool)
         {
             Debug.Log("Opening Vault");
+            StartCoroutine(OpenDoor());
+        }
+    }
+
+    IEnumerator OpenDoor()
+    {
+        float startTime = Time.time;
+        while (startTime < openDuration)
+        {
+            float fracComplete = (Time.time - startTime) / openDuration;
+            DoorClose.transform.rotation = Quaternion.Slerp(DoorClose.transform.rotation, DoorOpen, fracComplete);
+            yield return null;
         }
     }
 }
