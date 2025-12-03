@@ -31,7 +31,7 @@ public class Interactor : NetworkBehaviour
                 if (interactable.CanInteract())
                 {
                     interactable.Interact(this);
-                    animator.SetBool("Interact", true);
+                    animator.SetTrigger("InteractTrig");
                 }
             }
         } else if (Keyboard.current.eKey.wasPressedThisFrame && hasItem == true)
@@ -91,7 +91,7 @@ public class Interactor : NetworkBehaviour
     [ServerRpc (requireOwnership: false)]
     public void DropItem()
     {
-        animator.SetBool("Interact", true);
+        animator.SetTrigger("InteractTrig");
         //NetworkIdentity _spawnedObject = Instantiate(heldItem, transform.position, Quaternion.identity);
         GameObject gameObject = Instantiate(heldItem, transform.position, Quaternion.identity);
         gameObject.SetActive(true);
