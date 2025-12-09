@@ -78,7 +78,7 @@ public class SlotRollers : NetworkBehaviour, Iinteractable
 
     private void Stop()
     {
-        code = ((int)gameObject.transform.localEulerAngles.z / 36);
+        code = ((int)gameObject.transform.localEulerAngles.z / 72);
     }
 
     

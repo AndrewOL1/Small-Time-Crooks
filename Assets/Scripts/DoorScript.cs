@@ -16,6 +16,7 @@ public class DoorScript : NetworkIdentity
         openDuration *= 100;
         DoorClose.SetActive(true);
         //DoorOpen.SetActive(false);
+        
     }
 
     // Update is called once per frame

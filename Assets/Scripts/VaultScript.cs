@@ -28,6 +28,10 @@ public class VaultScript : MonoBehaviour
     public GameObject DoorClose;
     public float openDuration;
 
+    public bool unopened;
+    
+    public bool test;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,12 +39,14 @@ public class VaultScript : MonoBehaviour
         leftCodeBool = false;
         rightCodeBool = false;
         midCodeBool = false;
+        unopened = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         leftNum = (int)leftKnob.transform.localEulerAngles.z / 36;
+        //Debug.Log("" + leftNum + "|" + (int)leftKnob.transform.localEulerAngles.z / 36);
         midNum = (int)midKnob.transform.localEulerAngles.z / 36;
         rightNum = (int)rightKnob.transform.localEulerAngles.z / 36;
         rightText.text = ("" + rightNum);
@@ -51,37 +57,47 @@ public class VaultScript : MonoBehaviour
 
     void Combination()
     {
-        if ((int)leftKnob.transform.localEulerAngles.z / 36 == leftCode)
+        if (leftNum == leftCode)
         {
             leftCodeBool = true;
             
-        }
+        } else { leftCodeBool = false; }
 
-        if ((int)midKnob.transform.localEulerAngles.z / 36 == midCode)
+        if (midNum == midCode)
         {
             midCodeBool = true;
-        }
+        } else {  midCodeBool = false; }
 
-        if ((int)rightKnob.transform.localEulerAngles.z / 36 == rightCode)
+        if (rightNum == rightCode)
         {
             rightCodeBool = true;
+        } else {  rightCodeBool = false; }
+
+        if (midCodeBool && leftCodeBool && rightCodeBool && unopened)
+        {
+            unopened = false;
+            Debug.Log("Opening Vault");
+            StartCoroutine(OpenDoor());
         }
 
-        if (midCodeBool &&  leftCodeBool && rightCodeBool)
+        if (test)
         {
-            Debug.Log("Opening Vault");
+            Debug.Log("Test");
             StartCoroutine(OpenDoor());
         }
     }
 
     IEnumerator OpenDoor()
     {
-        float startTime = Time.time;
-        while (startTime < openDuration)
+        Debug.Log("Opening Vault");
+        float timer = 0;
+        while (timer < openDuration)
         {
-            float fracComplete = (Time.time - startTime) / openDuration;
+            timer += Time.deltaTime;
+            float fracComplete = timer / openDuration;
             DoorClose.transform.rotation = Quaternion.Slerp(DoorClose.transform.rotation, DoorOpen, fracComplete);
             yield return null;
         }
+        Debug.Log("Opened Vault");
     }
 }
