@@ -9,9 +9,10 @@ public class Interactor : NetworkBehaviour
     public Vector3 _raycastOffset = new Vector3(0, 1f, 0);
 
     public bool hasItem;
-    public GameObject heldItem;
+    public NetworkIdentity heldItem;
     [SerializeField]
     private NetworkAnimator animator;
+    private NetworkIdentity identity;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,7 +63,7 @@ public class Interactor : NetworkBehaviour
         }
         Ray rays = new Ray(transform.position + _raycastOffset, transform.forward+transform.up);
 
-        Debug.DrawRay(rays.origin, rays.direction, Color.red, 3f);
+        Debug.DrawRay(rays.origin, rays.direction, Color.blue, 3f);
 
         if (Physics.Raycast(rays, out RaycastHit hitInfos, _castDistance))
         {
@@ -88,13 +89,16 @@ public class Interactor : NetworkBehaviour
             Debug.Log("Interacting");
         }
     }*/
-    [ServerRpc (requireOwnership: false)]
     public void DropItem()
     {
         animator.SetTrigger("InteractTrig");
         //NetworkIdentity _spawnedObject = Instantiate(heldItem, transform.position, Quaternion.identity);
-        GameObject gameObject = Instantiate(heldItem, transform.position, Quaternion.identity);
-        gameObject.SetActive(true);
+        
+        NetworkIdentity newObject = Instantiate(heldItem, transform.position, Quaternion.identity);
+        newObject.GiveOwnership(localPlayer);
+        
+        //gameObject.GetComponent<NetworkIdentity>().GiveOwnership(localPlayer);
+        heldItem = null;
         hasItem = false;
     }
 }
