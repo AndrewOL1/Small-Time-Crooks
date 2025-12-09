@@ -61,19 +61,19 @@ public class VaultScript : MonoBehaviour
         {
             leftCodeBool = true;
             
-        }
+        } else { leftCodeBool = false; }
 
         if (midNum == midCode)
         {
             midCodeBool = true;
-        }
+        } else {  midCodeBool = false; }
 
         if (rightNum == rightCode)
         {
             rightCodeBool = true;
-        }
+        } else {  rightCodeBool = false; }
 
-        if (midCodeBool &&  leftCodeBool && rightCodeBool && unopened)
+        if (midCodeBool && leftCodeBool && rightCodeBool && unopened)
         {
             unopened = false;
             Debug.Log("Opening Vault");
