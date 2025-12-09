@@ -28,6 +28,8 @@ public class VaultScript : MonoBehaviour
     public GameObject DoorClose;
     public float openDuration;
 
+    public bool unopened;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,12 +37,14 @@ public class VaultScript : MonoBehaviour
         leftCodeBool = false;
         rightCodeBool = false;
         midCodeBool = false;
+        unopened = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         leftNum = (int)leftKnob.transform.localEulerAngles.z / 36;
+        //Debug.Log("" + leftNum + "|" + (int)leftKnob.transform.localEulerAngles.z / 36);
         midNum = (int)midKnob.transform.localEulerAngles.z / 36;
         rightNum = (int)rightKnob.transform.localEulerAngles.z / 36;
         rightText.text = ("" + rightNum);
@@ -51,31 +55,33 @@ public class VaultScript : MonoBehaviour
 
     void Combination()
     {
-        if ((int)leftKnob.transform.localEulerAngles.z / 36 == leftCode)
+        if (leftNum == leftCode)
         {
             leftCodeBool = true;
             
         }
 
-        if ((int)midKnob.transform.localEulerAngles.z / 36 == midCode)
+        if (midNum == midCode)
         {
             midCodeBool = true;
         }
 
-        if ((int)rightKnob.transform.localEulerAngles.z / 36 == rightCode)
+        if (rightNum == rightCode)
         {
             rightCodeBool = true;
         }
 
-        if (midCodeBool &&  leftCodeBool && rightCodeBool)
+        if (midCodeBool &&  leftCodeBool && rightCodeBool && unopened)
         {
-            Debug.Log("Opening Vault");
+            //Debug.Log("Opening Vault");
             StartCoroutine(OpenDoor());
+            unopened = false;
         }
     }
 
     IEnumerator OpenDoor()
     {
+        Debug.Log("Opening Vault");
         float startTime = Time.time;
         while (startTime < openDuration)
         {
