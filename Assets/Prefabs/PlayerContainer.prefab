@@ -1126,7 +1126,7 @@ MonoBehaviour:
   vrHelmet: {fileID: 864651406917419103}
   vrLeftHand: {fileID: 8107036932672565874}
   vrRightHand: {fileID: 8107036933184189069}
-  debug: 1
+  debug: 0
 --- !u!1 &6973319828089606740
 GameObject:
   m_ObjectHideFlags: 0
