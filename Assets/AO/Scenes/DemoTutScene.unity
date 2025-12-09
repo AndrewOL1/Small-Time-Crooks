@@ -4900,6 +4900,14 @@ MonoBehaviour:
   rightCodeBool: 0
   midCodeBool: 0
   leftNum: 0
+  midNum: 0
+  rightNum: 0
+  leftText: {fileID: 0}
+  midText: {fileID: 0}
+  rightText: {fileID: 0}
+  DoorOpen: {x: 0, y: 0, z: 0, w: 0}
+  DoorClose: {fileID: 0}
+  openDuration: 0
 --- !u!65 &740539292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6535,7 +6543,7 @@ MonoBehaviour:
   _directChildren: []
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
-  myDictionary:
+  playerType:
     _ownerAuth: 1
     _serializedDict:
       keys: []
@@ -9417,7 +9425,7 @@ MonoBehaviour:
   codeSecond: 
   codeLast: 
   inputAttemptNum: 0
-  DoorOpen: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
+  DoorOpen: {x: 0, y: 0.70710677, z: 0}
   DoorClose: {fileID: 1393073838}
   openDuration: 5
   ClearCodeEvent:

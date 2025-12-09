@@ -30,8 +30,8 @@ public class SlotMachine : NetworkBehaviour
 
     public float rollSpeed;
 
-    public GameObject CasinoKey;
-    public GameObject Coin;
+    public NetworkIdentity CasinoKey;
+    public NetworkIdentity Coin;
     public GameObject dropPoint;
 
     public bool TestingBool;
@@ -59,8 +59,8 @@ public class SlotMachine : NetworkBehaviour
         }
 
         if (TestingBool != true) return;
-        GameObject gameObject = Instantiate(CasinoKey, dropPoint.transform.position, Quaternion.identity);
-        gameObject.SetActive(true);
+        NetworkIdentity gameObject = Instantiate(CasinoKey, dropPoint.transform.position, Quaternion.identity);
+        gameObject.GiveOwnership(localPlayer);
         TestingBool = false;
 
     }
@@ -82,31 +82,35 @@ public class SlotMachine : NetworkBehaviour
         {
             for (int i = 0; i < 20; i++)
             {
-                GameObject gameObjects = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
-                gameObjects.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+                NetworkIdentity newObjects = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
+                newObjects.GiveOwnership(localPlayer);
+                newObjects.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
             }
-            GameObject gameObject = Instantiate(CasinoKey, transform.position, Quaternion.identity);
-            gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(2, 0, 0);
+            NetworkIdentity newObject = Instantiate(CasinoKey, transform.position, Quaternion.identity);
+            newObject.GiveOwnership(localPlayer);
+            newObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(2, 0, 0);
             
         }
         else if (leftCode == rightCode && midCode == rightCode)
         {
             for (int i = 0; i < 10; i++)
             {
-                GameObject gameObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
-                gameObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+                NetworkIdentity newObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
+                newObject.GiveOwnership(localPlayer);
+                newObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
             }
         }
         else if (leftCode == rightCode || leftCode == midCode || midCode == rightCode)
         {
             for (int i = 0; i < 1; i++)
             {
-                GameObject gameObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
-                gameObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+                NetworkIdentity newObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
+                newObject.GiveOwnership(localPlayer);
+                newObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
             }
         }
 
-        leverScript.leverPulled = false;
+        leverScript.canSpin = true;
     }
 
 

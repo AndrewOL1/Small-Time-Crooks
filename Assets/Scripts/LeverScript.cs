@@ -40,22 +40,23 @@ public class LeverScript : NetworkBehaviour
             PullLever();
         }
 
-        if (transform.rotation.x > -90 && canSpin == true)
+        if (transform.eulerAngles.x>290 && canSpin == true)
         {
+            Debug.Log(transform.eulerAngles.x);
             PullLever();
             //gameObject.transform.eulerAngles = new Vector3(0,0,1);
             
         }
-        else if (canSpin == false && leverPulled == true)
+        else if (!canSpin && leverPulled)
         {
-            transform.eulerAngles = new Vector3(-90, -90, -90);
-            canSpin = true;
+            transform.eulerAngles = new Vector3(270, 270, 90);
+            leverPulled = false;
         }
     }
     [ServerRpc]
     private void PullLever()
     {
-        leverPulled = false;
+        leverPulled = true;
         if(pullLever)
             pullLever = false;
         canSpin = false;

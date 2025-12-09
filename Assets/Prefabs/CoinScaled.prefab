@@ -71,6 +71,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2453924f19c0ea439886b78efa5e429, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5406209831058014294}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2453924f19c0ea439886b78efa5e429, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2491618661944507351}
     - targetCorrespondingSourceObject: {fileID: 3779745573541866595, guid: c2453924f19c0ea439886b78efa5e429, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5520027191285041230}
@@ -105,6 +108,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2491618661944507351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469469470511805257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817fe5016bd0a2a49a95b6eb338bb132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _syncParent: 1
+  _interpolateSettings: 7
+  _minBufferSize: 1
+  _maxBufferSize: 2
+  _characterControllerPatch: 0
+  _ownerAuth: 1
+  _interpolationTiming: 0
 --- !u!1 &4482999992061223547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3779745573541866595, guid: c2453924f19c0ea439886b78efa5e429, type: 3}

@@ -14,6 +14,7 @@ public class PlayerController : NetworkIdentity
     [SerializeField] private bool shouldFaceMoveDirection = false;
     [SerializeField] Camera mainCam;
     [SerializeField] private NetworkAnimator networkAnimator;
+    
 
     private CharacterController controller;
     private Vector2 moveInput;

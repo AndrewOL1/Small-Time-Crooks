@@ -10,6 +10,8 @@ TagManager:
   - GrabObject
   - PillarBottle1
   - CasinoKey
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ namespace AO.Scripts
 {
     public class TogglePlayer : NetworkBehaviour
     {
-        [SerializeField] private GameObject pcPlayer, vrPlayer;
+        [SerializeField] private GameObject pcPlayer, vrPlayer, vrHelmet,vrLeftHand, vrRightHand;
         [SerializeField] private bool debug;
         private ServerPlayerType _playerType;
         private void Awake()
@@ -78,6 +78,9 @@ namespace AO.Scripts
             if (vr)
             {
                 vrPlayer.SetActive(true);
+                vrHelmet.SetActive(true);
+                vrLeftHand.SetActive(true);
+                vrRightHand.SetActive(true);
             }
             else
             {

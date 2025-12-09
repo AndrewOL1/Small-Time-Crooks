@@ -51,7 +51,11 @@ namespace AO.Scripts
         }
         public void CloseGame()
         {
-            if (_lobbyDataHolder.CurrentLobby.IsOwner)
+            if (_lobbyDataHolder == null)
+            {
+                Application.Quit();
+            }
+            else if (_lobbyDataHolder.CurrentLobby.IsOwner)
             {
                 NetworkManager.main.StopServer();
             }

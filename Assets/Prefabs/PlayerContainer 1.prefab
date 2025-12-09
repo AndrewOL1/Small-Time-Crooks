@@ -6008,6 +6008,9 @@ MonoBehaviour:
   _visitiblityRules: {fileID: 0}
   pcPlayer: {fileID: 4756700633079237880}
   vrPlayer: {fileID: 8030889436497325428}
+  vrHelmet: {fileID: 0}
+  vrLeftHand: {fileID: 0}
+  vrRightHand: {fileID: 0}
   debug: 1
 --- !u!1001 &3240027429409227632
 PrefabInstance:
