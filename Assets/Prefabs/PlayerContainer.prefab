@@ -249,7 +249,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4367994478557908991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1270,7 +1270,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9124618903434402894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -7342,7 +7342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4865454003349728772, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4904265897298434943, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: m_TagString
@@ -7410,7 +7410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6662821543762252154, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 127
+      value: 4223
       objectReference: {fileID: 0}
     - target: {fileID: 6662821543811976542, guid: a90cdceeacb62d94193245db683a1e52, type: 3}
       propertyPath: m_LocalPosition.y

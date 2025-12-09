@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052756340784294831}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.00203}
+  m_LocalRotation: {x: 0.76604444, y: 0, z: 0, w: 0.64278764}
+  m_LocalPosition: {x: 0.00009, y: -0.00061, z: 0.00222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8173781737813632345}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 100, y: 0, z: 0}
 --- !u!1001 &8567432340946125490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49,15 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.528
+      value: 0.09705734
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.384
+      value: -0.08161181
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.916519
+      value: -0.47915077
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -114,9 +114,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6978422738419101057}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2464091520520879629}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5195147758453132966}
@@ -333,29 +330,6 @@ MonoBehaviour:
   _characterControllerPatch: 0
   _ownerAuth: 1
   _interpolationTiming: 0
---- !u!114 &2464091520520879629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801383337492266979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PermittedDisplacementAxes: -1
-  m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 1
-  m_AllowTwoHandedScaling: 0
-  m_OneHandedScaleSpeed: 0.5
-  m_ThresholdMoveRatioForScale: 0.05
-  m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
-  m_ScaleMultiplier: 0.25
 --- !u!65 &5195147758453132966
 BoxCollider:
   m_ObjectHideFlags: 0

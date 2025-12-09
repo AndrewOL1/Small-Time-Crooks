@@ -58,8 +58,6 @@ public class Interactor : NetworkBehaviour
             {
                 return true;
             }
-
-            return false;
         }
         Ray rays = new Ray(transform.position + _raycastOffset, transform.forward+transform.up);
 

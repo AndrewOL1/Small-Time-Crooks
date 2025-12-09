@@ -13,6 +13,7 @@ public class LeverScript : NetworkBehaviour
     public GameObject Wheel3;
     public bool leverPulled;
     public bool pullLever;
+    private Vector3 pos,rot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,10 +26,13 @@ public class LeverScript : NetworkBehaviour
     {
         canSpin = true;
         hinge = GetComponent<HingeJoint>();
+        pos=transform.position;
+        rot = transform.eulerAngles;
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (hinge == null)
             hinge = GetComponent<HingeJoint>();
@@ -40,23 +44,17 @@ public class LeverScript : NetworkBehaviour
             PullLever();
         }
 
-        if (transform.eulerAngles.x>290 && canSpin == true)
+        if (transform.eulerAngles.x>290 && canSpin)
         {
             Debug.Log(transform.eulerAngles.x);
             PullLever();
             //gameObject.transform.eulerAngles = new Vector3(0,0,1);
             
         }
-        else if (!canSpin && leverPulled)
-        {
-            transform.eulerAngles = new Vector3(270, 270, 90);
-            leverPulled = false;
-        }
     }
     [ServerRpc]
     private void PullLever()
     {
-        leverPulled = true;
         if(pullLever)
             pullLever = false;
         canSpin = false;
@@ -65,5 +63,13 @@ public class LeverScript : NetworkBehaviour
         Wheel2.GetComponent<SlotRollers>().isSpun = true;
         Wheel3.GetComponent<SlotRollers>().isSpun = true;
         Debug.Log("Spin the wheels");
+    }
+
+    public void Reset()
+    {
+        if (canSpin) return;
+        transform.position=pos;
+        transform.eulerAngles = rot;
+        canSpin = true;
     }
 }

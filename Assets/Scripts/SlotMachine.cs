@@ -110,7 +110,7 @@ public class SlotMachine : NetworkBehaviour
             }
         }
 
-        leverScript.canSpin = true;
+        leverScript.Reset();
     }
 
 

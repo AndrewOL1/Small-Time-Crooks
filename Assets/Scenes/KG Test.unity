@@ -5561,7 +5561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8ecd5f311266841a062a9875881947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VrPlayer: 1
+  VrPlayer: 0
 --- !u!1001 &676690291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6489,6 +6489,7 @@ GameObject:
   - component: {fileID: 762486351}
   - component: {fileID: 762486350}
   - component: {fileID: 762486349}
+  - component: {fileID: 762486356}
   m_Layer: 3
   m_Name: Button (6)
   m_TagString: button
@@ -6742,6 +6743,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762486347}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &762486356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762486347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Interactable: {fileID: 762486349}
+  m_PokeCollider: {fileID: 762486353}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 4
+      m_InteractionDepthOffset: 0.1
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
 --- !u!1001 &766745009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6929,6 +6952,7 @@ GameObject:
   - component: {fileID: 792517714}
   - component: {fileID: 792517713}
   - component: {fileID: 792517712}
+  - component: {fileID: 792517719}
   m_Layer: 3
   m_Name: Button (4)
   m_TagString: button
@@ -7182,6 +7206,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792517710}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &792517719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792517710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Interactable: {fileID: 792517712}
+  m_PokeCollider: {fileID: 792517716}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 4
+      m_InteractionDepthOffset: 0.1
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
 --- !u!1001 &795994791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8184,6 +8230,7 @@ GameObject:
   - component: {fileID: 885466478}
   - component: {fileID: 885466477}
   - component: {fileID: 885466476}
+  - component: {fileID: 885466483}
   m_Layer: 3
   m_Name: Button (1)
   m_TagString: button
@@ -8437,6 +8484,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885466474}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &885466483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885466474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Interactable: {fileID: 885466476}
+  m_PokeCollider: {fileID: 885466480}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 4
+      m_InteractionDepthOffset: 0.1
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
 --- !u!1001 &885866412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10278,6 +10347,7 @@ GameObject:
   - component: {fileID: 1040865329}
   - component: {fileID: 1040865328}
   - component: {fileID: 1040865327}
+  - component: {fileID: 1040865334}
   m_Layer: 3
   m_Name: Button
   m_TagString: button
@@ -10555,6 +10625,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040865325}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1040865334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040865325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Interactable: {fileID: 1040865327}
+  m_PokeCollider: {fileID: 1040865331}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 4
+      m_InteractionDepthOffset: 0.1
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
 --- !u!1 &1042197560
 GameObject:
   m_ObjectHideFlags: 0
@@ -12367,6 +12459,7 @@ GameObject:
   - component: {fileID: 1177177715}
   - component: {fileID: 1177177714}
   - component: {fileID: 1177177713}
+  - component: {fileID: 1177177720}
   m_Layer: 3
   m_Name: Button (5)
   m_TagString: button
@@ -12620,6 +12713,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177177711}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1177177720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177177711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Interactable: {fileID: 1177177713}
+  m_PokeCollider: {fileID: 1177177717}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 4
+      m_InteractionDepthOffset: 0.1
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
 --- !u!1001 &1185703925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13148,6 +13263,7 @@ GameObject:
   - component: {fileID: 1292080958}
   - component: {fileID: 1292080957}
   - component: {fileID: 1292080956}
+  - component: {fileID: 1292080963}
   m_Layer: 3
   m_Name: Button (2)
   m_TagString: button
@@ -13401,6 +13517,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292080954}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1292080963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292080954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Interactable: {fileID: 1292080956}
+  m_PokeCollider: {fileID: 1292080960}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 4
+      m_InteractionDepthOffset: 0.1
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
 --- !u!1001 &1298343046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13555,6 +13693,7 @@ GameObject:
   - component: {fileID: 1312833950}
   - component: {fileID: 1312833949}
   - component: {fileID: 1312833948}
+  - component: {fileID: 1312833955}
   m_Layer: 3
   m_Name: Button (3)
   m_TagString: button
@@ -13808,6 +13947,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312833946}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1312833955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312833946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Interactable: {fileID: 1312833948}
+  m_PokeCollider: {fileID: 1312833952}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 4
+      m_InteractionDepthOffset: 0.1
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
 --- !u!1001 &1324081967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13862,7 +14023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16364,7 +16525,7 @@ Transform:
   m_GameObject: {fileID: 1686393384}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.002, y: 1.18, z: -5.47}
+  m_LocalPosition: {x: -9.073, y: 1.18, z: -5.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17148,6 +17309,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8953001399111801767, guid: 5c0e66f963d62a84e891e04f9dbcbe11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8953001399111801767, guid: 5c0e66f963d62a84e891e04f9dbcbe11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8953001399111801767, guid: 5c0e66f963d62a84e891e04f9dbcbe11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8953001399111801767, guid: 5c0e66f963d62a84e891e04f9dbcbe11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8953001399111801767, guid: 5c0e66f963d62a84e891e04f9dbcbe11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 270
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c0e66f963d62a84e891e04f9dbcbe11, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.584
@@ -17385,7 +17566,7 @@ MonoBehaviour:
   leftWheel: {fileID: 847171645}
   midWheel: {fileID: 882617533}
   rightWheel: {fileID: 325254311}
-  leverScript: {fileID: 0}
+  leverScript: {fileID: 1770845171}
   leftCode: 0
   midCode: 0
   rightCode: 0
@@ -17397,8 +17578,8 @@ MonoBehaviour:
   correctCode: 0
   currentCode: 0
   rollSpeed: 8
-  CasinoKey: {fileID: 8765865270847996652, guid: 9f782af659399574da38ee7afb214bce, type: 3}
-  Coin: {fileID: 469469470511805257, guid: a65aae63acfeab04bae7e4ff7d17be2a, type: 3}
+  CasinoKey: {fileID: 1148846705194487443, guid: 9f782af659399574da38ee7afb214bce, type: 3}
+  Coin: {fileID: 2491618661944507351, guid: a65aae63acfeab04bae7e4ff7d17be2a, type: 3}
   dropPoint: {fileID: 672740635}
   TestingBool: 0
 --- !u!64 &1770845166
@@ -17468,7 +17649,7 @@ HingeJoint:
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_UseSpring: 1
+  m_UseSpring: 0
   m_Spring:
     spring: 1
     damper: 2
@@ -17483,7 +17664,7 @@ HingeJoint:
   m_UseAcceleration: 0
   m_Limits:
     min: -60
-    max: 0
+    max: 10
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -17638,7 +17819,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -20337,7 +20518,7 @@ Transform:
   m_GameObject: {fileID: 2077334502}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -2.204, y: 0.277, z: -9.866}
+  m_LocalPosition: {x: -8.698, y: 0.277, z: -4.196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
