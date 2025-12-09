@@ -29,6 +29,8 @@ public class VaultScript : MonoBehaviour
     public float openDuration;
 
     public bool unopened;
+    
+    public bool test;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -73,21 +75,29 @@ public class VaultScript : MonoBehaviour
 
         if (midCodeBool &&  leftCodeBool && rightCodeBool && unopened)
         {
-            //Debug.Log("Opening Vault");
-            StartCoroutine(OpenDoor());
             unopened = false;
+            Debug.Log("Opening Vault");
+            StartCoroutine(OpenDoor());
+        }
+
+        if (test)
+        {
+            Debug.Log("Test");
+            StartCoroutine(OpenDoor());
         }
     }
 
     IEnumerator OpenDoor()
     {
         Debug.Log("Opening Vault");
-        float startTime = Time.time;
-        while (startTime < openDuration)
+        float timer = 0;
+        while (timer < openDuration)
         {
-            float fracComplete = (Time.time - startTime) / openDuration;
+            timer += Time.deltaTime;
+            float fracComplete = timer / openDuration;
             DoorClose.transform.rotation = Quaternion.Slerp(DoorClose.transform.rotation, DoorOpen, fracComplete);
             yield return null;
         }
+        Debug.Log("Opened Vault");
     }
 }
