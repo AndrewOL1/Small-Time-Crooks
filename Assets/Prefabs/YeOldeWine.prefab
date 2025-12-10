@@ -41,15 +41,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.17456341
+      value: -2.8787198
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.037611783
+      value: 1.857
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5927706
+      value: -15.0379
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: m_LocalRotation.z
@@ -82,7 +82,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 43f71c92838d5ad4595dff363061ccad, type: 2}
+      objectReference: {fileID: 2100000, guid: ea26243484c3871469889228e0aa924f, type: 2}
     - target: {fileID: 919132149155446097, guid: 32a8a98faf9fc054889652e66992eff2, type: 3}
       propertyPath: m_Name
       value: YeOldeWine

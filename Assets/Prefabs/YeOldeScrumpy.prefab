@@ -49,15 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.09705734
+      value: -3.0369825
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08161181
+      value: 1.804
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.47915077
+      value: -15.029
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 6fdaea4272934cd4689c0e98d3d7279d, type: 2}
+      objectReference: {fileID: 2100000, guid: 234870d17f48d294ea9d3701aa622efb, type: 2}
     - target: {fileID: 919132149155446097, guid: 8045f202c35606d4195da672ccb5066c, type: 3}
       propertyPath: m_Name
       value: YeOldeScrumpy

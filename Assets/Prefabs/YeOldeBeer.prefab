@@ -49,15 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 040f73ed4eb1a444fbab030ee37306a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.28981328
+      value: -3.179
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 040f73ed4eb1a444fbab030ee37306a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07661176
+      value: 1.8059
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 040f73ed4eb1a444fbab030ee37306a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.61920834
+      value: -15.032
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 040f73ed4eb1a444fbab030ee37306a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 040f73ed4eb1a444fbab030ee37306a3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 43f71c92838d5ad4595dff363061ccad, type: 2}
+      objectReference: {fileID: 2100000, guid: 98f5f54f557b9554597b2a11c5a6d584, type: 2}
     - target: {fileID: 919132149155446097, guid: 040f73ed4eb1a444fbab030ee37306a3, type: 3}
       propertyPath: m_Name
       value: YeOldeBeer
