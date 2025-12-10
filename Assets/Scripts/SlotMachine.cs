@@ -34,6 +34,9 @@ public class SlotMachine : NetworkBehaviour
     public NetworkIdentity Coin;
     public GameObject dropPoint;
 
+    [SerializeField]
+    private VaultScript VaultScript;
+
     public bool TestingBool;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -63,6 +66,7 @@ public class SlotMachine : NetworkBehaviour
         gameObject.GiveOwnership(PlayerID.Server);
         TestingBool = false;
 
+        VaultScript.test = true;
     }
 
     public void Spin()
@@ -87,6 +91,7 @@ public class SlotMachine : NetworkBehaviour
             }
             NetworkIdentity newObject = Instantiate(CasinoKey, transform.position, Quaternion.identity);
             newObject.GiveOwnership(PlayerID.Server);
+            VaultScript.test = true;
             
         }
         else if (leftCode == rightCode && midCode == rightCode)

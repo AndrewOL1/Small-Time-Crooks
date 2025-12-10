@@ -8428,6 +8428,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4226445978126596053, guid: 5176cee45488771458dec60510dca3b0, type: 3}
+      propertyPath: m_FarAttachMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4243996487549754902, guid: 5176cee45488771458dec60510dca3b0, type: 3}
       propertyPath: m_Name
       value: Barstool (11)
@@ -19563,6 +19567,7 @@ MonoBehaviour:
   CasinoKey: {fileID: 5808940533669509525, guid: 85f2c29b11abf90459ccfb1199201dd1, type: 3}
   Coin: {fileID: 2491618661944507351, guid: a65aae63acfeab04bae7e4ff7d17be2a, type: 3}
   dropPoint: {fileID: 672740635}
+  VaultScript: {fileID: 1803163269}
   TestingBool: 0
 --- !u!64 &1770845166
 MeshCollider:
@@ -21041,6 +21046,7 @@ MonoBehaviour:
   CasinoKey: {fileID: 0}
   Coin: {fileID: 0}
   dropPoint: {fileID: 0}
+  VaultScript: {fileID: 0}
   TestingBool: 0
 --- !u!1001 &1902681108
 PrefabInstance:
