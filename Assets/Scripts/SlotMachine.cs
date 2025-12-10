@@ -60,7 +60,7 @@ public class SlotMachine : NetworkBehaviour
 
         if (TestingBool != true) return;
         NetworkIdentity gameObject = Instantiate(CasinoKey, dropPoint.transform.position, Quaternion.identity);
-        gameObject.GiveOwnership(localPlayer);
+        gameObject.GiveOwnership(PlayerID.Server);
         TestingBool = false;
 
     }
@@ -70,7 +70,7 @@ public class SlotMachine : NetworkBehaviour
         wasSpun = true;
         spinTime = Time.time;
     }
-
+    [ServerRpc]
     public void CheckSlots()
     {
         leftCode = leftWheel.code;
@@ -83,12 +83,10 @@ public class SlotMachine : NetworkBehaviour
             for (int i = 0; i < 20; i++)
             {
                 NetworkIdentity newObjects = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
-                newObjects.GiveOwnership(localPlayer);
-                newObjects.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+                newObjects.GiveOwnership(PlayerID.Server);
             }
             NetworkIdentity newObject = Instantiate(CasinoKey, transform.position, Quaternion.identity);
-            newObject.GiveOwnership(localPlayer);
-            newObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(2, 0, 0);
+            newObject.GiveOwnership(PlayerID.Server);
             
         }
         else if (leftCode == rightCode && midCode == rightCode)
@@ -96,8 +94,7 @@ public class SlotMachine : NetworkBehaviour
             for (int i = 0; i < 10; i++)
             {
                 NetworkIdentity newObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
-                newObject.GiveOwnership(localPlayer);
-                newObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+                newObject.GiveOwnership(PlayerID.Server);
             }
         }
         else if (leftCode == rightCode || leftCode == midCode || midCode == rightCode)
@@ -105,13 +102,10 @@ public class SlotMachine : NetworkBehaviour
             for (int i = 0; i < 1; i++)
             {
                 NetworkIdentity newObject = Instantiate(Coin, dropPoint.transform.position, Quaternion.identity);
-                newObject.GiveOwnership(localPlayer);
-                newObject.transform.GetChild(1).GetComponent<Rigidbody>().linearVelocity = new Vector3(1, 0, 0);
+                newObject.GiveOwnership(PlayerID.Server);
             }
         }
 
         leverScript.Reset();
     }
-
-
 }

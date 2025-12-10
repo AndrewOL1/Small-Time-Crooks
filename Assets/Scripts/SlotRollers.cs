@@ -25,14 +25,19 @@ public class SlotRollers : NetworkBehaviour, Iinteractable
     {
         return true;
     }
-
     public bool Interact(Interactor interactor)
     {
         Debug.Log("Jammed " + gameObject.name);
-        isJammed=!isJammed;
+        Jam();
         Stop();
         return true;
 
+    }
+
+    [ServerRpc]
+    private void Jam()
+    {
+        isJammed=!isJammed;
     }
 
 

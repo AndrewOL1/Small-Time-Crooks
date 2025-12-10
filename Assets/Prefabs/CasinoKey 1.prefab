@@ -358,7 +358,7 @@ MonoBehaviour:
   _directChildren: []
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
-  prefab: {fileID: 1148846705194487443, guid: 9f782af659399574da38ee7afb214bce, type: 3}
+  prefab: {fileID: 7243347529317449291, guid: 7076fb0e8ee3fef49a578615ccedda81, type: 3}
 --- !u!114 &5215021731185112528
 MonoBehaviour:
   m_ObjectHideFlags: 0

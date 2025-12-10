@@ -1,15 +1,16 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class VaultScript : MonoBehaviour
 {
     public GameObject leftKnob;
     public GameObject midKnob;
     public GameObject rightKnob;
-    public float leftCode;
-    public float rightCode;
-    public float midCode;
+    public int leftCode;
+    public int rightCode;
+    public int midCode;
 
     public bool leftCodeBool;
     public bool rightCodeBool;
@@ -27,6 +28,8 @@ public class VaultScript : MonoBehaviour
     public Quaternion DoorOpen;
     public GameObject DoorClose;
     public float openDuration;
+    [SerializeField]
+    private Slider rightSlider, leftSlider, midSlider;
 
     public bool unopened;
     
@@ -45,10 +48,13 @@ public class VaultScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        leftNum = (int)leftKnob.transform.localEulerAngles.z / 36;
+        //leftNum = (int)leftKnob.transform.localEulerAngles.z / 36;
         //Debug.Log("" + leftNum + "|" + (int)leftKnob.transform.localEulerAngles.z / 36);
-        midNum = (int)midKnob.transform.localEulerAngles.z / 36;
-        rightNum = (int)rightKnob.transform.localEulerAngles.z / 36;
+        //midNum = (int)midKnob.transform.localEulerAngles.z / 36;
+        //rightNum = (int)rightKnob.transform.localEulerAngles.z / 36;
+        leftNum = leftSlider.value/0.1f;
+        rightNum = rightSlider.value/0.1f;
+        midNum = midSlider.value/0.1f;
         rightText.text = ("" + rightNum);
         leftText.text = ("" + leftNum);
         midText.text = ("" + midNum);
