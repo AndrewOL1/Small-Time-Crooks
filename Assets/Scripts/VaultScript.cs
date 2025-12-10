@@ -17,9 +17,9 @@ public class VaultScript : MonoBehaviour
     public bool midCodeBool;
 
 
-    public float leftNum;
-    public float midNum;
-    public float rightNum;
+    public int leftNum;
+    public int midNum;
+    public int rightNum;
 
     public TMP_Text leftText;
     public TMP_Text midText;
@@ -52,9 +52,9 @@ public class VaultScript : MonoBehaviour
         //Debug.Log("" + leftNum + "|" + (int)leftKnob.transform.localEulerAngles.z / 36);
         //midNum = (int)midKnob.transform.localEulerAngles.z / 36;
         //rightNum = (int)rightKnob.transform.localEulerAngles.z / 36;
-        leftNum = leftSlider.value/0.1f;
-        rightNum = rightSlider.value/0.1f;
-        midNum = midSlider.value/0.1f;
+        leftNum = (int)(leftSlider.value/0.1f);
+        rightNum = (int)(rightSlider.value/0.1f);
+        midNum = (int)(midSlider.value/0.1f);
         rightText.text = ("" + rightNum);
         leftText.text = ("" + leftNum);
         midText.text = ("" + midNum);
