@@ -9,6 +9,7 @@ public class DoorScript : NetworkIdentity
     public GameObject DoorClose;
     public float openDuration;
     public string keyTag;
+    public AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,6 +35,7 @@ public class DoorScript : NetworkIdentity
             //DoorOpen.SetActive(true);
 
             //DoorClose.transform.rotation = Quaternion.Slerp(DoorClose.transform.rotation, DoorOpen.transform.rotation, 0.1f * Time.deltaTime);
+            audioSource.Play();
             StartCoroutine(OpenDoor());
             //Destroy(other);
         }
