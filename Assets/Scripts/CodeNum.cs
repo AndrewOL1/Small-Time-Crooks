@@ -13,6 +13,10 @@ public class CodeNum : NetworkBehaviour
     public bool buttonPressed; // a test bool
 
     private bool _cooldown;
+    [SerializeField]
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip audioClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,6 +50,7 @@ public class CodeNum : NetworkBehaviour
     public void OnClicked()
     {
         if (_cooldown) return;
+        audioSource.PlayOneShot(audioClip);
         buttonPressed = !buttonPressed;
         _cooldown = true;
         StartCoroutine(Delay());

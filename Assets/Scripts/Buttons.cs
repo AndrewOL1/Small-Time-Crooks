@@ -17,6 +17,11 @@ public class Buttons : NetworkBehaviour
     public Vector3 DoorOpen;
     public GameObject DoorClose;
     public float openDuration;
+    
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip openDoorClip,wrongCodeClip;
 
     
     public UnityEvent ClearCodeEvent;
@@ -112,10 +117,11 @@ public class Buttons : NetworkBehaviour
         if (RightCode == (codeFirst + codeSecond + codeLast))
         {
             StartCoroutine(OpenDoor());
-            
+            audioSource.PlayOneShot(openDoorClip);
         }
         else
         {
+            audioSource.PlayOneShot(wrongCodeClip);
             ClearCode();
         }
         

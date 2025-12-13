@@ -34,6 +34,10 @@ public class VaultScript : MonoBehaviour
     public bool unopened;
     
     public bool test;
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip openClip;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -90,6 +94,7 @@ public class VaultScript : MonoBehaviour
         {
             Debug.Log("Test");
             StartCoroutine(OpenDoor());
+            audioSource.PlayOneShot(openClip);
         }
     }
 
