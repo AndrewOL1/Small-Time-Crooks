@@ -7162,8 +7162,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0019999999, y: 0.045380954, z: 0.03288739}
-  m_Center: {x: -0.0014999999, y: -0.0000000034059802, z: 0.0018827362}
+  m_Size: {x: 0.0019999999, y: 0.045380954, z: 0}
+  m_Center: {x: -0.0014999999, y: -0.00000000340598, z: 0.018326446}
 --- !u!65 &757565515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7225,8 +7225,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0019999999, y: 0.045380954, z: 0.0016709672}
-  m_Center: {x: -0.0014999999, y: -0.0000000034059797, z: -0.016007693}
+  m_Size: {x: 0.0019999999, y: 0.045380954, z: 0}
+  m_Center: {x: -0.0014999999, y: -0.0000000034059797, z: -0.016843187}
 --- !u!65 &757565518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13019,7 +13019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 3470d35f5d937b541a5e2fd33e10b7fd, type: 2}
+  m_Material: {fileID: 2100000, guid: c0379b9abec700940a32e72174af7f76, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 0.9
   m_StartAngleFade: 180
@@ -21400,6 +21400,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1147041716820531372, guid: d11a2a2a70d43a34582b0363230d15c8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1988839253}
+    - targetCorrespondingSourceObject: {fileID: 1147041716820531372, guid: d11a2a2a70d43a34582b0363230d15c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1988839257}
     - targetCorrespondingSourceObject: {fileID: 9097931457450406363, guid: d11a2a2a70d43a34582b0363230d15c8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 965938718}
@@ -23350,6 +23353,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -5044561551262065468, guid: d11a2a2a70d43a34582b0363230d15c8, type: 3}
   m_PrefabInstance: {fileID: 1803163263}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1988839257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988839249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817fe5016bd0a2a49a95b6eb338bb132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _syncParent: 1
+  _interpolateSettings: 7
+  _minBufferSize: 1
+  _maxBufferSize: 2
+  _characterControllerPatch: 0
+  _ownerAuth: 1
+  _interpolationTiming: 0
 --- !u!1 &1997347709
 GameObject:
   m_ObjectHideFlags: 0

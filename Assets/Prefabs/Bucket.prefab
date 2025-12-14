@@ -121,6 +121,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f7df3f0b3a345964a951ef4bd01b3409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5440804062840806605}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f7df3f0b3a345964a951ef4bd01b3409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4453252849562680796}
   m_SourcePrefab: {fileID: 100100000, guid: f7df3f0b3a345964a951ef4bd01b3409, type: 3}
 --- !u!4 &2533135644129160062 stripped
 Transform:
@@ -274,7 +277,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 532620653787833758}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -347,3 +350,34 @@ CapsuleCollider:
   m_Height: 0.6698556
   m_Direction: 1
   m_Center: {x: 0, y: 0.35843408, z: 0}
+--- !u!114 &4453252849562680796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2912793076793782724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817fe5016bd0a2a49a95b6eb338bb132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _syncParent: 1
+  _interpolateSettings: 7
+  _minBufferSize: 1
+  _maxBufferSize: 2
+  _characterControllerPatch: 0
+  _ownerAuth: 1
+  _interpolationTiming: 0

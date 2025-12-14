@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/AO/Scenes/OfflineSceneTest.unity
     guid: 9aeb4393a41e9854f8d20891a83346ea
-  - enabled: 0
+  - enabled: 1
     path: Assets/AO/Scenes/OfflineSceneTestVR.unity
     guid: 567886f7be406ba4d84f6a5d8771d40f
   - enabled: 0
